@@ -893,50 +893,6 @@
       flex-shrink: 0;
     }
   
-    /* ===== PAGE LOADER ===== */
-    #pageLoader {
-      position: fixed;
-      inset: 0;
-      z-index: 100000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #e2e2e2, #c9d6ff);
-      opacity: 1;
-      visibility: visible;
-      transition: opacity .45s ease, visibility .45s ease;
-    }
-    #pageLoader.loader-hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    #pageLoader .loader {
-      width: 50px;
-      aspect-ratio: 1;
-      display: grid;
-      border: 4px solid #0000;
-      border-radius: 50%;
-      border-right-color: #25b09b;
-      animation: l15 1s infinite linear;
-    }
-    #pageLoader .loader::before,
-    #pageLoader .loader::after {
-      content: "";
-      grid-area: 1/1;
-      margin: 2px;
-      border: inherit;
-      border-radius: 50%;
-      animation: l15 2s infinite;
-    }
-    #pageLoader .loader::after {
-      margin: 8px;
-      animation-duration: 3s;
-    }
-    @keyframes l15 {
-      100% { transform: rotate(1turn); }
-    }
-
 /* ===== Netflix Package Modal ===== */
 .netflix-modal {
   position: fixed;
@@ -1436,7 +1392,7 @@ body.dark-mode .cara-order-box,body.dark-mode .faq-box{background:#1f2937;border
 
 <style id="szael-info-popup-css">
 /* =========================================================
-   POPUP INFO PENTING - MUNCUL SETELAH LOADING SELESAI
+   POPUP INFO PENTING - MUNCUL BERSAMA TAMPILAN WEB
    ========================================================= */
 .info-popup-modal{
   position:fixed;inset:0;z-index:100002;display:flex;align-items:center;justify-content:center;
@@ -1622,13 +1578,27 @@ body.dark-mode .admin-choice-btn{
 body.dark-mode .admin-choice-btn small{
   color:#9ca3af;
 }
+/* =========================================================
+   REVEAL AWAL - ANIMASI RINGAN SAAT WEB MUNCUL
+   ========================================================= */
+.szael-initial-reveal header,
+.szael-initial-reveal section#tentang {
+  animation: szaelInitialReveal .45s ease-out both;
+}
+@keyframes szaelInitialReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .szael-initial-reveal header,
+  .szael-initial-reveal section#tentang {
+    animation: none;
+  }
+}
 </style>
 
 </head>
-<body>
-  <div id="pageLoader" aria-label="Loading">
-    <div class="loader"></div>
-  </div>
+<body class="szael-initial-reveal">
 
 
 <!-- NAVBAR MENU - KEMBALI KE NAVBAR SEBELUM SIDEBAR -->
@@ -2398,14 +2368,9 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 </script>
 
 <script>
-window.addEventListener('load', function () {
-  setTimeout(function () {
-    const loader = document.getElementById('pageLoader');
-    if (loader) loader.classList.add('loader-hidden');
-
-    // Popup informasi muncul bersamaan saat tampilan website mulai muncul.
-    document.dispatchEvent(new CustomEvent('szael:page-ready'));
-  }, 900);
+document.addEventListener('DOMContentLoaded', function () {
+  // Popup informasi muncul bersamaan saat tampilan web mulai muncul.
+  document.dispatchEvent(new CustomEvent('szael:page-ready'));
 });
 </script>
 
@@ -2929,7 +2894,7 @@ window.addEventListener('load', function () {
     if(e.key==='Escape') closeInfoPopup();
   });
 
-  // Tampilkan tepat saat loader mulai menghilang dan halaman web mulai terlihat.
+  // Tampilkan bersamaan saat tampilan web mulai muncul.
   document.addEventListener('szael:page-ready',openInfoPopup);
 })();
 </script>
