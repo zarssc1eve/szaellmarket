@@ -1,0 +1,3047 @@
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Aplikasi Premium By Szaell</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #ebf4ff 0%, #e0e7ff 100%);
+      color: #1f2937;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    h1, h2, h3, h4 {
+      margin: 0;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    button:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .flex {
+      display: flex;
+    }
+    .flex-col {
+      flex-direction: column;
+    }
+    .flex-row {
+      flex-direction: row;
+    }
+    .items-center {
+      align-items: center;
+    }
+    .justify-between {
+      justify-content: space-between;
+    }
+    .justify-center {
+      justify-content: center;
+    }
+    .gap-4 {
+      gap: 1rem;
+    }
+    .gap-3 {
+      gap: 0.75rem;
+    }
+    .gap-6 {
+      gap: 1.5rem;
+    }
+    .gap-8 {
+      gap: 2rem;
+    }
+    .space-x-4 > * + * {
+      margin-left: 1rem;
+    }
+    .space-x-6 > * + * {
+      margin-left: 1.5rem;
+    }
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .md\:flex-row {
+        flex-direction: row;
+      }
+      .md\:flex {
+        display: flex;
+      }
+      .md\:space-x-6 > * + * {
+        margin-left: 1.5rem;
+      }
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .md\:mb-0 {
+        margin-bottom: 0;
+      }
+      .md\:w-1\/2 {
+        width: 50%;
+      }
+      .md\:w-auto {
+        width: auto;
+      }
+      .md\:mt-0 {
+        margin-top: 0;
+      }
+      .md\:px-0 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .md\:pt-0 {
+        padding-top: 0;
+      }
+      .md\:pb-0 {
+        padding-bottom: 0;
+      }
+      .md\:hidden {
+        display: none;
+      }
+      .md\:block {
+        display: block;
+      }
+    }
+    .grid {
+      display: grid;
+    }
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .lg\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .gap-8 {
+      gap: 2rem;
+    }
+    html{
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(90deg, #2563eb 0%, #4f46e5 100%);
+      color: white;
+      padding: 1.25rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-bg {
+      background-color: white;
+      padding: 0.5rem;
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+      flex-shrink: 0;
+    }
+    .logo-bg img {
+      border-radius: 9999px;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      user-select: none;
+    }
+    #burgerBtn {
+      font-size: 1.5rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: block;
+    }
+    @media (min-width: 768px) {
+      #burgerBtn {
+        display: none;
+      }
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 16rem;
+      height: 100vh;
+      background: linear-gradient(90deg, #2563eb 0%, #4f46e5 100%);
+      color: white;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      padding-top: 5rem;
+      z-index: 40;
+      overflow-y: auto;
+    }
+    nav.open {
+      transform: translateX(0);
+    }
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      margin: 0;
+    }
+    nav ul li a {
+      display: block;
+      padding: 0.5rem 0.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus-visible {
+      background-color: #1e40af;
+      text-decoration: underline;
+      outline: none;
+    }
+    @media (min-width: 768px) {
+      nav {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        transform: none !important;
+        padding-top: 0;
+        overflow: visible;
+      }
+      nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      nav ul li a {
+        padding: 0.25rem 0.5rem;
+        background: transparent;
+        text-decoration: none;
+        color: white;
+      }
+      nav ul li a:hover,
+      nav ul li a:focus-visible {
+        background-color: rgba(255 255 255 / 0.2);
+        text-decoration: underline;
+      }
+    }
+    section#tentang {
+      padding: 5rem 1.5rem;
+    }
+    .hero-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 768px) {
+      .hero-container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+    }
+    .hero-text {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .hero-text {
+        text-align: left;
+        width: 50%;
+      }
+    }
+    .hero-text h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #3730a3;
+      line-height: 1.1;
+    }
+    .hero-text h2 span {
+      color: #2563eb;
+    }
+    .hero-text p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      color: #374151;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    @media (min-width: 768px) {
+      .hero-buttons {
+        justify-content: flex-start;
+      }
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      color: white;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(37 99 235 / 0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background-color: #1e40af;
+      outline: none;
+      transform: scale(1.05);
+    }
+    .btn-secondary {
+      background-color: white;
+      color: #2563eb;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgb(37 99 235 / 0.3);
+      border: 2px solid #2563eb;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background-color: #f3f4f6;
+      outline: none;
+      transform: scale(1.05);
+    }
+    .hero-image-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 384px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-image-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 256px;
+      height: 256px;
+      background-color: #2563eb;
+      border-radius: 9999px;
+      filter: blur(40px);
+      opacity: 0.2;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+    .hero-image {
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgb(37 99 235 / 0.3);
+      position: relative;
+      z-index: 1;
+      max-height: 384px;
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+    section#list-apk {
+      padding: 4rem 1.5rem;
+      background-color: white;
+    }
+    section#list-apk h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #2563eb;
+    }
+    section#list-apk h2 span {
+      color: #2563eb;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 768px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .menu-card {
+      background: linear-gradient(135deg, #ebf4ff 0%, #e0e7ff 100%);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+    .menu-card:hover,
+    .menu-card:focus-within {
+      box-shadow: 0 10px 15px rgb(0 0 0 / 0.2);
+      outline: none;
+    }
+    .menu-card-header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+    .menu-icon {
+      background-color: #2563eb;
+      color: white;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+    .menu-card-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: #1e40af;
+    }
+    .menu-card-header p {
+      color: #374151;
+      font-size: 0.9375rem;
+      line-height: 1.3;
+    }
+    .menu-card img {
+      border-radius: 0.75rem;
+      object-fit: cover;
+      height: 160px;
+      width: 100%;
+      margin-top: auto;
+      user-select: none;
+    }
+    section#keunggulan {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #e0e7ff 0%, #ebf4ff 100%);
+    }
+    section#keunggulan h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #2563eb;
+    }
+    section#keunggulan h2 span {
+      color: #2563eb;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 768px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .feature-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+    }
+    .feature-card:hover,
+    .feature-card:focus-within {
+      box-shadow: 0 10px 15px rgb(0 0 0 / 0.2);
+      outline: none;
+    }
+    .feature-icon {
+      color: #2563eb;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1e40af;
+    }
+    .feature-card p {
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    section#paket {
+      padding: 4rem 1.5rem;
+    }
+    section#paket h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #2563eb;
+    }
+    section#paket h2 span {
+      color: #2563eb;
+    }
+    .paket-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 768px) {
+      .paket-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+      cursor: default;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      position: relative;
+    }
+    .card:hover,
+    .card:focus-within {
+      box-shadow: 0 10px 15px rgb(0 0 0 / 0.2);
+      transform: translateY(-5px);
+      outline: none;
+    }
+    .card.popular {
+      border: 2px solid #2563eb;
+    }
+    .card-header {
+      text-align: center;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .card-popular-label {
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #2563eb;
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      user-select: none;
+    }
+    .card-icon {
+      background-color: #2563eb;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 0.75rem auto;
+      flex-shrink: 0;
+    }
+    .price {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #2563eb;
+      margin: 1rem 0 0.25rem 0;
+      text-align: center;
+      user-select: text;
+    }
+    .duration {
+      text-align: center;
+      color: #4b5563;
+      font-weight: 600;
+      user-select: text;
+    }
+    .description {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 1rem;
+      user-select: text;
+    }
+    .benefits {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+      color: #374151;
+      flex-grow: 1;
+      overflow-y: auto;
+      user-select: text;
+    }
+    .benefits li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .benefits li i {
+      color: #2563eb;
+      flex-shrink: 0;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .benefits::-webkit-scrollbar {
+      width: 6px;
+    }
+    .benefits::-webkit-scrollbar-thumb {
+      background-color: rgba(37, 99, 235, 0.5);
+      border-radius: 3px;
+    }
+    .benefits::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .benefits {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(37, 99, 235, 0.5) transparent;
+    }
+    @supports (-ms-overflow-style: none) {
+      .benefits {
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      }
+    }
+    .btn-order {
+      background-color: #2563eb;
+      color: white;
+      font-weight: 700;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      user-select: none;
+    }
+    .btn-order:hover,
+    .btn-order:focus-visible {
+      background-color: #1e40af;
+      outline: none;
+    }
+    section.testimonial-section {
+      padding: 4rem 1.5rem;
+      background-color: white;
+    }
+    section.testimonial-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #2563eb;
+    }
+    section.testimonial-section h2 span {
+      color: #2563eb;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 768px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .testimonial-card {
+      background: linear-gradient(135deg, #ebf4ff 0%, #e0e7ff 100%);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .testimonial-header img {
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .testimonial-header h4 {
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0;
+      color: #1e40af;
+    }
+    .testimonial-header p {
+      font-size: 0.875rem;
+      color: #4b5563;
+      margin: 0;
+      user-select: text;
+    }
+    .testimonial-text {
+      color: #374151;
+      font-size: 1rem;
+      line-height: 1.4;
+      user-select: text;
+      flex-grow: 1;
+    }
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 1.25rem;
+      display: flex;
+      gap: 0.25rem;
+      user-select: none;
+    }
+    section#kontak {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+      color: white;
+      user-select: none;
+    }
+    section#kontak .container {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    section#kontak h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    section#kontak p.lead {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #d1d5db;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 768px) {
+      .contact-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    .btn-whatsapp {
+      background-color: white;
+      color: #2563eb;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px rgb(255 255 255 / 0.5);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-whatsapp:hover,
+    .btn-whatsapp:focus-visible {
+      background-color: #e0e7ff;
+      outline: none;
+    }
+    .btn-email {
+      background-color: #3b82f6;
+      color: white;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px rgb(59 130 246 / 0.5);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-email:hover,
+    .btn-email:focus-visible {
+      background-color: #2563eb;
+      outline: none;
+    }
+    .contact-info {
+      margin-top: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      color: #d1d5db;
+      user-select: text;
+    }
+    .contact-info h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    .contact-info p {
+      margin: 0.25rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+    .contact-info p i {
+      min-width: 20px;
+      text-align: center;
+      color: #93c5fd;
+      flex-shrink: 0;
+    }
+  
+    /* ===== PAGE LOADER ===== */
+    #pageLoader {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #e2e2e2, #c9d6ff);
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .45s ease, visibility .45s ease;
+    }
+    #pageLoader.loader-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    #pageLoader .loader {
+      width: 50px;
+      aspect-ratio: 1;
+      display: grid;
+      border: 4px solid #0000;
+      border-radius: 50%;
+      border-right-color: #25b09b;
+      animation: l15 1s infinite linear;
+    }
+    #pageLoader .loader::before,
+    #pageLoader .loader::after {
+      content: "";
+      grid-area: 1/1;
+      margin: 2px;
+      border: inherit;
+      border-radius: 50%;
+      animation: l15 2s infinite;
+    }
+    #pageLoader .loader::after {
+      margin: 8px;
+      animation-duration: 3s;
+    }
+    @keyframes l15 {
+      100% { transform: rotate(1turn); }
+    }
+
+/* ===== Netflix Package Modal ===== */
+.netflix-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.netflix-modal-open {
+  overflow: hidden;
+}
+
+.netflix-modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.netflix-modal-box {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 25px;
+  border-radius: 22px;
+  background: #111827;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 25px 70px rgba(0,0,0,.45);
+  transform: translateY(20px) scale(.97);
+  transition: transform .25s ease;
+}
+
+.netflix-modal.show .netflix-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.netflix-modal-title {
+  margin: 0 45px 5px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.netflix-modal-subtitle {
+  margin: 0 0 20px;
+  text-align: center;
+  opacity: .9;
+  color: #ffffff;
+}
+
+.netflix-modal-close {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #ffffff;
+  background: rgba(255,255,255,.10);
+  font-size: 1.15rem;
+  transition: .2s ease;
+}
+
+.netflix-modal-close:hover {
+  background: rgba(255,255,255,.17);
+  transform: rotate(90deg);
+}
+
+.netflix-package-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.netflix-package {
+  padding: 18px;
+  border-radius: 17px;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.09);
+  color: #ffffff;
+}
+
+.netflix-package-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.netflix-package-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: 0 0 34px;
+  background: #ffffff;
+}
+
+.netflix-package h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.netflix-package .netflix-package-duration {
+  margin: 0 0 10px;
+  font-size: .9rem;
+  color: rgba(255,255,255,.82);
+}
+
+.netflix-package .netflix-package-price {
+  margin: 0 0 15px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.netflix-package-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .netflix-package-list {
+    grid-template-columns: 1fr;
+  }
+
+  .netflix-modal {
+    padding: 12px;
+  }
+
+  .netflix-modal-box {
+    padding: 20px 15px;
+    border-radius: 18px;
+  }
+}
+
+/* =========================================================
+   APP PACKAGE POPUPS - CSS
+   EDIT MUDAH: bagian popup Alight/Capcut/Canva/YouTube/Sportify
+   ========================================================= */
+.app-package-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.app-package-modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.app-package-modal-box {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 24px;
+  border-radius: 22px;
+  background: #111827;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 25px 70px rgba(0,0,0,.45);
+  transform: translateY(20px) scale(.97);
+  transition: transform .25s ease;
+}
+.app-package-modal.show .app-package-modal-box {
+  transform: translateY(0) scale(1);
+}
+.app-package-modal-title {
+  margin: 0 48px 5px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.app-package-modal-subtitle {
+  margin: 0 0 18px;
+  text-align: center;
+  color: rgba(255,255,255,.88);
+}
+.app-package-modal-close {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255,255,255,.10);
+  font-size: 1.15rem;
+  transition: .2s ease;
+}
+.app-package-modal-close:hover {
+  background: rgba(255,255,255,.18);
+  transform: rotate(90deg);
+}
+.app-package-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.app-package-item {
+  padding: 18px;
+  border-radius: 17px;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.09);
+  color: #fff;
+}
+.app-package-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.app-package-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 9px;
+  flex: 0 0 38px;
+  background: #fff;
+}
+.app-package-item h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #fff;
+}
+.app-package-duration {
+  margin: 0 0 10px;
+  font-size: .9rem;
+  color: rgba(255,255,255,.82);
+}
+.app-package-price {
+  margin: 0 0 15px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.app-package-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .app-package-modal { padding: 10px; }
+  .app-package-modal-box {
+    padding: 20px 14px;
+    border-radius: 18px;
+    max-height: 88vh;
+  }
+  .app-package-list { grid-template-columns: 1fr; }
+}
+
+
+/* =========================================================
+   DARK / LIGHT MODE
+   ========================================================= */
+body.dark-mode{background:#111827!important;color:#e5e7eb!important;}
+body.dark-mode section#list-apk,body.dark-mode section#keunggulan,body.dark-mode section#paket,body.dark-mode section#kontak{background:#111827!important;color:#e5e7eb;}
+body.dark-mode section#tentang{background:linear-gradient(135deg,#172554 0%,#111827 100%)!important;}
+body.dark-mode .hero-text h2,body.dark-mode section#list-apk h2,body.dark-mode section#keunggulan h2,body.dark-mode section#paket h2{color:#93c5fd!important;}
+body.dark-mode .hero-text p,body.dark-mode .description,body.dark-mode .duration,body.dark-mode .feature-card p{color:#d1d5db!important;}
+body.dark-mode .menu-card,body.dark-mode .card,body.dark-mode .feature-card{background:#1f2937!important;color:#e5e7eb!important;box-shadow:0 8px 24px rgba(0,0,0,.22)!important;}
+body.dark-mode .menu-card h3,body.dark-mode .card h3,body.dark-mode .feature-card h3,body.dark-mode .price{color:#f9fafb!important;}
+body.dark-mode footer{background:#0b1120!important;color:#d1d5db!important;}
+body.dark-mode .app-package-modal-box,body.dark-mode .netflix-modal-box{background:#111827!important;color:#f9fafb!important;}
+body.dark-mode .app-package-item,body.dark-mode .netflix-package{background:#1f2937!important;color:#f9fafb!important;}
+
+/* =========================================================
+   NAVBAR + DARK/LIGHT TOGGLE
+   EDIT MUDAH: tombol mode ada di navbar.
+   ========================================================= */
+.theme-nav-item { list-style:none; }
+.theme-toggle-nav {
+  display:flex; align-items:center; gap:8px;
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.12); color:#fff;
+  border-radius:10px; padding:9px 12px;
+  cursor:pointer; font:inherit;
+  transition:.2s ease;
+}
+.theme-toggle-nav:hover { background:rgba(255,255,255,.22); transform:translateY(-1px); }
+body.dark-mode header { background:linear-gradient(90deg,#111827 0%,#1f2937 100%)!important; }
+body.dark-mode nav { background:linear-gradient(180deg,#111827 0%,#1f2937 100%)!important; }
+body.dark-mode .theme-toggle-nav { border-color:rgba(255,255,255,.18); background:rgba(255,255,255,.08); }
+body.dark-mode { scroll-behavior:smooth; }
+</style>
+
+<style>
+/* =========================================================
+   TAMBAHAN FITUR TOKO - MUDAH DICARI
+   SEARCH + FILTER + BADGE + SCROLL ANIMATION + WA + BACK TOP
+   ========================================================= */
+.store-tools {
+  max-width: 1200px;
+  margin: -1rem auto 2.2rem;
+  padding: 0 1.5rem;
+}
+.store-search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.store-search-box {
+  position: relative;
+  flex: 1 1 260px;
+}
+.store-search-box i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+}
+.store-search-box input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #dbe4f0;
+  border-radius: 14px;
+  padding: 0 16px 0 44px;
+  font: inherit;
+  outline: none;
+  background: #fff;
+  color: #1f2937;
+  box-sizing: border-box;
+  transition: .2s ease;
+}
+.store-search-box input:focus { border-color:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,.12); }
+.store-filter {
+  min-height: 48px;
+  border: 1px solid #dbe4f0;
+  border-radius: 14px;
+  padding: 0 14px;
+  font: inherit;
+  background: #fff;
+  color: #1f2937;
+  outline: none;
+}
+.store-result-count { margin:10px 2px 0; font-size:.88rem; color:#64748b; }
+.store-no-results { display:none; text-align:center; padding:30px 15px; color:#64748b; font-weight:600; }
+.store-badge {
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:3;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#2563eb;
+  color:#fff;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.04em;
+  box-shadow:0 5px 14px rgba(37,99,235,.25);
+}
+.menu-card, .card, .feature-card, .testimonial-card { position:relative; }
+.scroll-reveal {
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.scroll-reveal.is-visible { opacity:1; transform:none; }
+
+/* FLOATING WHATSAPP */
+.floating-wa {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#25d366;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.22);
+  z-index:9990;
+  font-size:27px;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.floating-wa:hover { transform:translateY(-3px) scale(1.04); box-shadow:0 14px 30px rgba(0,0,0,.28); }
+.floating-wa .wa-label {
+  position:absolute;
+  right:66px;
+  white-space:nowrap;
+  background:#111827;
+  color:#fff;
+  padding:7px 10px;
+  border-radius:9px;
+  font-size:.78rem;
+  opacity:0;
+  pointer-events:none;
+  transform:translateX(5px);
+  transition:.2s ease;
+}
+.floating-wa:hover .wa-label { opacity:1; transform:none; }
+
+/* BACK TO TOP */
+.back-top {
+  position:fixed;
+  right:18px;
+  bottom:86px;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:12px;
+  background:#2563eb;
+  color:#fff;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9989;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:.25s ease;
+  box-shadow:0 8px 20px rgba(37,99,235,.28);
+}
+.back-top.show { opacity:1; visibility:visible; transform:none; }
+
+/* DARK MODE TAMBAHAN */
+body.dark-mode .store-search-box input,
+body.dark-mode .store-filter { background:#1f2937; color:#f9fafb; border-color:#374151; }
+body.dark-mode .store-search-box i,
+body.dark-mode .store-result-count,
+body.dark-mode .store-no-results { color:#9ca3af; }
+body.dark-mode .floating-wa .wa-label { background:#f9fafb; color:#111827; }
+
+@media (max-width:600px) {
+  .store-tools { padding:0 1rem; }
+  .store-search-row { display:grid; grid-template-columns:1fr; }
+  .store-filter { width:100%; }
+  .floating-wa { right:14px; bottom:14px; }
+  .back-top { right:14px; bottom:80px; }
+  .floating-wa .wa-label { display:none; }
+}
+</style>
+
+<style id="szael-fitur-tambahan-css">
+/* =========================================================
+   FITUR TAMBAHAN SZAE L STORE - MUDAH DIEDIT
+   ========================================================= */
+.store-status-box,.cara-order-box,.faq-box{max-width:1200px;margin:18px auto;padding:16px 20px;border-radius:16px;box-sizing:border-box}
+.store-status-box{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2)}
+.store-status-online{color:#15803d;font-weight:800}.store-status-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#22c55e;margin-right:7px;box-shadow:0 0 0 5px rgba(34,197,94,.12)}
+.cara-order-box{background:#fff;border:1px solid #e5e7eb;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.cara-order-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}.cara-order-item{text-align:center;padding:14px;border-radius:12px;background:#f8fafc}.cara-order-item i{font-size:1.25rem;margin-bottom:7px}.cara-order-item strong{display:block}.cara-order-item small{color:#64748b}
+body.dark-mode .cara-order-box,body.dark-mode .faq-box{background:#1f2937;border-color:#374151;color:#f9fafb}.dark-mode .cara-order-item{background:#111827}.dark-mode .faq-item{border-color:#374151}.dark-mode .faq-answer{color:#d1d5db}
+@media(max-width:700px){.store-status-box{align-items:flex-start;flex-direction:column}.cara-order-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:430px){.cara-order-grid{grid-template-columns:1fr}}
+</style>
+
+
+
+<style id="szael-info-popup-css">
+/* =========================================================
+   POPUP INFO PENTING - MUNCUL SETELAH LOADING SELESAI
+   ========================================================= */
+.info-popup-modal{
+  position:fixed;inset:0;z-index:100002;display:flex;align-items:center;justify-content:center;
+  padding:18px;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease;
+}
+.info-popup-modal.show{opacity:1;visibility:visible;pointer-events:auto}
+.info-popup-box{width:min(480px,100%);position:relative;padding:26px;border-radius:22px;background:#fff;color:#1f2937;
+  box-shadow:0 25px 80px rgba(0,0,0,.35);transform:translateY(18px) scale(.96);transition:transform .3s ease}
+.info-popup-modal.show .info-popup-box{transform:translateY(0) scale(1)}
+.info-popup-icon{width:58px;height:58px;margin:0 auto 12px;border-radius:18px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;font-size:1.5rem}
+.info-popup-title{text-align:center;margin:0 38px 7px;font-size:1.45rem;font-weight:900}
+.info-popup-subtitle{text-align:center;margin:0 0 18px;color:#64748b;line-height:1.5}
+.info-popup-list{display:grid;gap:10px;margin:0 0 18px}
+.info-popup-item{display:flex;gap:12px;align-items:flex-start;padding:13px;border:1px solid #e5e7eb;border-radius:14px;background:#f8fafc}
+.info-popup-item i{margin-top:2px;color:#2563eb;font-size:1.05rem;width:20px;text-align:center}
+.info-popup-item strong{display:block;margin-bottom:2px}
+.info-popup-item span{display:block;color:#64748b;font-size:.9rem;line-height:1.4}
+.info-popup-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.info-popup-btn{border:0;border-radius:12px;padding:11px 16px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.info-popup-btn-primary{background:#2563eb;color:#fff}.info-popup-btn-primary:hover{background:#1d4ed8}
+.info-popup-btn-secondary{background:#e5e7eb;color:#1f2937}.info-popup-btn-secondary:hover{background:#d1d5db}
+.info-popup-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;border-radius:50%;background:#f1f5f9;color:#475569;cursor:pointer;font-size:1rem}
+.info-popup-close:hover{background:#e2e8f0}
+body.dark-mode .info-popup-box{background:#111827;color:#f9fafb}
+body.dark-mode .info-popup-subtitle{color:#9ca3af}
+body.dark-mode .info-popup-item{background:#1f2937;border-color:#374151}
+body.dark-mode .info-popup-item span{color:#9ca3af}
+body.dark-mode .info-popup-btn-secondary{background:#374151;color:#f9fafb}
+body.dark-mode .info-popup-btn-secondary:hover{background:#4b5563}
+body.dark-mode .info-popup-close{background:#1f2937;color:#d1d5db}
+/* Tampilan popup desktop dibuat compact agar ukurannya tetap normal seperti di HP */
+@media(min-width:701px){
+  .info-popup-modal{padding:16px;}
+  .info-popup-box{
+    width:420px;
+    max-width:calc(100vw - 32px);
+    max-height:calc(100vh - 32px);
+    overflow-y:auto;
+    padding:20px;
+    border-radius:18px;
+  }
+  .info-popup-icon{width:50px;height:50px;border-radius:15px;font-size:1.25rem;margin-bottom:10px;}
+  .info-popup-title{font-size:1.25rem;margin-bottom:5px;}
+  .info-popup-subtitle{font-size:.9rem;margin-bottom:14px;}
+  .info-popup-list{gap:8px;margin-bottom:14px;}
+  .info-popup-item{gap:10px;padding:11px;border-radius:12px;}
+  .info-popup-item i{font-size:.95rem;width:18px;}
+  .info-popup-item strong{font-size:.95rem;}
+  .info-popup-item span{font-size:.82rem;line-height:1.35;}
+  .info-popup-btn{padding:9px 13px;font-size:.88rem;border-radius:10px;}
+  .info-popup-close{width:34px;height:34px;top:10px;right:10px;font-size:.9rem;}
+}
+@media(max-width:430px){.info-popup-box{padding:22px 16px}.info-popup-title{font-size:1.3rem}.info-popup-item{padding:11px}}
+</style>
+
+<style id="szael-admin-pilihan-css">
+/* =========================================================
+   PILIH ADMIN - TAMBAHAN
+   ========================================================= */
+.admin-choice-modal{
+  position:fixed;
+  inset:0;
+  z-index:100001;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .25s ease,visibility .25s ease;
+}
+.admin-choice-modal.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.admin-choice-box{
+  width:min(420px,100%);
+  position:relative;
+  padding:24px;
+  border-radius:20px;
+  background:#fff;
+  color:#1f2937;
+  box-shadow:0 25px 70px rgba(0,0,0,.35);
+  transform:translateY(15px) scale(.97);
+  transition:transform .25s ease;
+}
+.admin-choice-modal.show .admin-choice-box{
+  transform:translateY(0) scale(1);
+}
+.admin-choice-title{
+  margin:0 42px 5px 0;
+  text-align:center;
+  font-size:1.4rem;
+}
+.admin-choice-subtitle{
+  margin:0 0 18px;
+  text-align:center;
+  color:#64748b;
+}
+.admin-choice-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:50%;
+  background:#f1f5f9;
+  color:#334155;
+  font-size:1.2rem;
+  cursor:pointer;
+}
+.admin-choice-close:hover{
+  background:#e2e8f0;
+  transform:rotate(90deg);
+}
+.admin-choice-btn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px;
+  margin-top:10px;
+  border:1px solid #e2e8f0;
+  border-radius:14px;
+  background:#f8fafc;
+  color:#1f2937;
+  text-align:left;
+  cursor:pointer;
+  transition:.2s ease;
+}
+.admin-choice-btn:hover{
+  transform:translateY(-2px);
+  border-color:#25d366;
+  box-shadow:0 7px 18px rgba(37,211,102,.12);
+}
+.admin-choice-btn i{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#25d366;
+  color:#fff;
+  font-size:22px;
+  flex-shrink:0;
+}
+.admin-choice-btn span{
+  display:flex;
+  flex-direction:column;
+}
+.admin-choice-btn strong{
+  font-size:1rem;
+}
+.admin-choice-btn small{
+  margin-top:2px;
+  color:#64748b;
+}
+body.dark-mode .admin-choice-box{
+  background:#1f2937;
+  color:#f9fafb;
+}
+body.dark-mode .admin-choice-subtitle{
+  color:#9ca3af;
+}
+body.dark-mode .admin-choice-close{
+  background:#374151;
+  color:#f9fafb;
+}
+body.dark-mode .admin-choice-btn{
+  background:#111827;
+  border-color:#374151;
+  color:#f9fafb;
+}
+body.dark-mode .admin-choice-btn small{
+  color:#9ca3af;
+}
+</style>
+
+</head>
+<body>
+  <div id="pageLoader" aria-label="Loading">
+    <div class="loader"></div>
+  </div>
+
+
+<!-- NAVBAR MENU - KEMBALI KE NAVBAR SEBELUM SIDEBAR -->
+<header>
+    <div class="container">
+      <div class="logo-wrapper">
+        <div class="logo-bg">
+          <img src="https://files.catbox.moe/s9vphf.gif" width="100" height="100" />
+        </div>
+        <h1>Szaell Market Premium</h1>
+      </div>
+      <button id="burgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav id="navMenu" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="#tentang" tabindex="0">🏠 Beranda</a></li>
+          <li><a href="#list-apk" tabindex="0">📱 Aplikasi Premium</a></li>
+          <li><a href="#keunggulan" tabindex="0">⭐ Keunggulan Kami</a></li>
+          <li><a href="#paket" tabindex="0">💳 Pilihan Paket</a></li>
+          <li><a href="#kontak" tabindex="0">📞 Kontak</a></li>
+
+        <li class="theme-nav-item">
+          <button type="button" id="themeToggleNav" class="theme-toggle-nav" aria-label="Ganti mode warna" aria-pressed="false">
+            <i id="themeIconNav" class="fas fa-moon" aria-hidden="true"></i>
+            <span id="themeTextNav">Mode Gelap</span>
+          </button>
+        </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="szael-fitur-tambahan">
+  <!-- STATUS TOKO - ubah ONLINE/OFFLINE di bagian ini -->
+  <div class="store-status-box">
+    <div><span class="store-status-dot"></span><span class="store-status-online">STORE ONLINE</span><br><small>Admin siap menerima pesanan.</small></div>
+    <strong><i class="fas fa-clock"></i> 08.00 - 23.00 WIB</strong>
+  </div>
+</div>
+
+<section id="tentang" aria-label="Tentang Bot WhatsApp Premium">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h2>Aplikasi Premium <span>Szael Market</span></h2>
+        <p>Menyediakan bebrapa account aplikasi premium seperti Alight Motion, Capcut, Canva, Youtube, Sportify, dll.</p>
+        <div class="hero-buttons">
+          <a href="#paket" class="btn-primary">Lihat Paket Premium</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper" aria-hidden="true">
+        <div class="hero-image-glow"></div>
+        <img class="hero-image" src="https://files.catbox.moe/ep641m.gif" width="300" height="600" />
+      </div>
+    </div>
+  </section>
+
+  <section id="list-apk" aria-label="Menu Bot Premium">
+    <h2> List Aplikasi <span>Premium</span></h2>
+
+    <!-- =========================================================
+         SEARCH & FILTER APLIKASI
+         EDIT MUDAH: fitur pencarian/filter ada di bagian ini.
+         ========================================================= -->
+    <div class="store-tools" id="storeTools">
+      <div class="store-search-row">
+        <div class="store-search-box">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" id="storeSearch" placeholder="Cari aplikasi, misalnya Netflix..." autocomplete="off" aria-label="Cari aplikasi">
+        </div>
+        <select id="storeCategory" class="store-filter" aria-label="Filter kategori aplikasi">
+          <option value="all">Semua Kategori</option>
+          <option value="video">🎬 Video & Editing</option>
+          <option value="design">🎨 Desain</option>
+          <option value="music">🎵 Music</option>
+          <option value="ai">🤖 AI</option>
+          <option value="other">📱 Lainnya</option>
+        </select>
+      </div>
+      <div class="store-result-count" id="storeResultCount" aria-live="polite"></div>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-photo-video" aria-hidden="true"></i></div>
+          <div>
+            <h3>Alight Motion ( Private & Sharing ) <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Alight Motion Premium</p>
+            <ul>- Tanpa Watermark</ul>
+            <ul>- Akses Efek Dan Fitur Pro</ul>
+            <ul>- Efek Visual Lengkap</ul>
+            <ul>- Support Android & IOS</ul>
+            <ul>- Beragam Format Export.</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/zugu7n.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
+          <div>
+            <h3>Capcut <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Capcut Premium</p>
+            <ul>- Tanpa Watermark</ul>
+            <ul>- Template Dan Efek Premium</ul>
+            <ul>- Fitur AI Canggih</ul>
+            <ul>- Export 4K & 60 FPS</ul>
+            <ul>- Multi-Platform.</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/fhqwx6.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-image" aria-hidden="true"></i></div>
+          <div>
+            <h3>Canva <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Canva Premium</p>
+            <ul>- Template Premium</ul>
+            <ul>- Jutaan Aset Premium</ul>
+            <ul>- Fitur AI</ul>
+            <ul>- Penyimpanan Cloud</ul>
+            <ul>- Brand Kit.</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/3ueobp.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-film" aria-hidden="true"></i></div>
+          <div>
+            <h3>Netflix <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Netflix Premium</p>
+            <ul>- Kualitas 4K + HDR</ul>
+            <ul>- Tonton Di Berbagai Perangkat</ul>
+            <ul>- Download & Tonton Offline</ul>
+            <ul>- Tanpa Iklan</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/msjhus.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-film" aria-hidden="true"></i></div>
+          <div>
+            <h3>Youtube ( Video & Music )<i class="fas fa-star"></i></h3>
+            <p>Keuntungan Youtube Premium</p>
+            <ul>- Tanpa Iklan</ul>
+            <ul>- Multi-Device</ul>
+            <ul>- Include Youtube Music Premium</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/k5u6hx.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-music" aria-hidden="true"></i></div>
+          <div>
+            <h3>Sportify <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Sportify Premium</p>
+            <ul>- Bebas Iklan</ul>
+            <ul>- Skip Lagu Tanpa Batas</ul>
+            <ul>- Download Lagu</ul>
+            <ul>- Kualitas Audio Lebih Tinggi</ul>
+          </div>
+        </div>
+        <img src="https://i.ibb.co.com/WNZVHZd4/SAMPUL-A75-BC39.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-image" aria-hidden="true"></i></div>
+          <div>
+            <h3>Wink <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Wink Premium</p>
+            <ul>- AI Video Enhancement</ul>
+            <ul>- AI Editing Tools</ul>
+            <ul>- HD Video Enhancement</ul>
+            <ul>- Advanced Beauty Tools</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/q37qta.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
+          <div>
+            <h3>IQIYI <i class="fas fa-star"></i></h3>
+            <p>Keuntungan IQIYI Premium</p>
+            <ul>- Bebas Iklan</ul>
+            <ul>- Kualitas Video Tinggi</ul>
+            <ul>- Akses Konten VIP</ul>
+            <ul>- Akses Lebih Awal</ul>
+            <ul>- Download Offline</ul>
+            <ul>- Subtitle Multibahasa</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/tgy4vq.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
+          <div>
+            <h3>BStation <i class="fas fa-star"></i></h3>
+            <p>Keuntungan BStation Premium</p>
+            <ul>- Bebas Iklan</ul>
+            <ul>- Kualitas Video Tinggi</ul>
+            <ul>- Pengalaman Menonton Lebih Nyaman</ul>
+            <ul>- Akses Lebih Awal</ul>
+            <ul>- Download Offline</ul>
+            <ul>- Pilihan Anime Lebih Lengkap</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/18o4at.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-image" aria-hidden="true"></i></div>
+          <div>
+            <h3>Remini <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Remini Premium</p>
+            <ul>- AI Photo Enhancement</ul>
+            <ul>- Tingkatkan Resolusi</ul>
+            <ul>- AI Face Enhancement</ul>
+            <ul>- AI Photo Effect</ul>
+            <ul>- Tanpa Iklan</ul>
+            <ul>- Fitur Premium</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/2t28q5.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
+          <div>
+            <h3>Loklok <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Loklok Premium</p>
+            <ul>- Early Acces</ul>
+            <ul>- Kualitas HD</ul>
+            <ul>- Bebas Iklan</ul>
+            <ul>- Download Offline</ul>
+          </div>
+        </div>
+        <img src="https://i.ibb.co.com/7dGCkcrf/SAMPUL-998571-A.png" width="400" height="200" />
+      </article>
+      <article class="menu-card" tabindex="0">
+        <div class="menu-card-header">
+          <div class="menu-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+          <div>
+            <h3>Chatgpt <i class="fas fa-star"></i></h3>
+            <p>Keuntungan Chatgpt Premium</p>
+            <ul>- Model AI Lebih Canggih</ul>
+            <ul>- Respons Lebih Cepat</ul>
+            <ul>- Limit Lebih Tinggi</ul>
+            <ul>- AI Image</ul>
+            <ul>- Fitur AI Lengkap</ul>
+          </div>
+        </div>
+        <img src="https://files.catbox.moe/17cggo.png" width="400" height="200" />
+      </article>
+    </div>
+    <div class="store-no-results" id="storeNoResults">Tidak ada aplikasi yang cocok dengan pencarianmu.</div>
+  </section>
+
+  <section id="keunggulan" aria-label="Keunggulan Bot Premium">
+    <h2>Keunggulan <span>Kami</span></h2>
+    <div class="features-grid">
+      <article class="feature-card" tabindex="0">
+        <div class="feature-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
+        <h3>Proses Cepat</h3>
+        <p>Pesanan Diproses Dengan Cepat Setelah Pembayaran Dikonfirmasi.</p>
+      </article>
+      <article class="feature-card" tabindex="0">
+        <div class="feature-icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
+        <h3>Aplikasi Berkualitas</h3>
+        <p>Pilihan aplikasi premium untuk kebutuhan hiburan, desain, produktivitas, dan lainnya.</p>
+      </article>
+      <article class="feature-card" tabindex="0">
+        <div class="feature-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
+        <h3>Support 24/7</h3>
+        <p>Admin siap membantu jika mengalami kendala saat proses pembelian atau penggunaan.</p>
+      </article>
+      <article class="feature-card" tabindex="0">
+        <div class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+        <h3>Transaksi Aman</h3>
+        <p>Proses pemesanan dibuat sederhana dan aman untuk pelanggan.</p>
+      </article>
+      <article class="feature-card" tabindex="0">
+        <div class="feature-icon"><i class="fas fa-sync" aria-hidden="true"></i></div>
+        <h3>Update Berkala</h3>
+        <p>Informasi produk dan ketersediaan diperbarui secara berkala.</p>
+      </article>
+      <article class="feature-card" tabindex="0">
+        <div class="feature-icon"><i class="fas fa-dollar-sign" aria-hidden="true"></i></div>
+        <h3>Harga Terjangkau</h3>
+        <p>Dapatkan akses aplikasi premium dengan pilihan harga yang sesuai kebutuhan.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="paket" aria-label="Paket Harga aplikasi Premium">
+    <h2>Pilihan <span>Paket</span></h2>
+    <div class="paket-grid">
+      <!-- =========================================================
+           ALIGHT MOTION - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "ALIGHT MOTION - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="alightChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/fl1vsn.png" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Alight Motion" />
+          <h3>Alight Motion Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Alight Motion</p>
+        </div>
+        <p class="price">Mulai Rp5.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Alight Motion</p>
+        <ul class="benefits" aria-label="Pilihan Paket Alight Motion">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Alight Motion Private 1 Tahun</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Alight Motion Sharing 1 Tahun</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="alightModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           CAPCUT - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "CAPCUT - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="capcutChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/qdzv6x.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Capcut" />
+          <h3>Capcut Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Capcut</p>
+        </div>
+        <p class="price">Mulai Rp5.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Capcut</p>
+        <ul class="benefits" aria-label="Pilihan Paket Capcut">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Capcut Private 1 Minggu</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Capcut Private 1 Bulan</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="capcutModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           CANVA - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "CANVA - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="canvaChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/evbhw1.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Canva" />
+          <h3>Canva Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Canva</p>
+        </div>
+        <p class="price">Mulai Rp10.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Canva</p>
+        <ul class="benefits" aria-label="Pilihan Paket Canva">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Canva Head 1 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Canva Head 3 Bulan</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="canvaModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           NETFLIX - PEMILIHAN PAKET (SUDAH ADA)
+           EDIT MUDAH: cari "NETFLIX - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card netflix-choice-card" tabindex="0" id="netflixChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/600z50.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Netflix" />
+          <h3>Netflix Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Netflix</p>
+        </div>
+        <p class="price">Mulai Rp65.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Netflix</p>
+        <ul class="benefits" aria-label="Pilihan Paket Netflix">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Netflix Private 1 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Netflix Semi-Private 1 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Netflix Semi-Private 3 Bulan</li>
+        </ul>
+        <button type="button" class="btn-order netflix-open-btn" id="openNetflixModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           YOUTUBE - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "YOUTUBE - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="youtubeChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/6d5o1e.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="YouTube" />
+          <h3>YouTube Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket YouTube</p>
+        </div>
+        <p class="price">Mulai Rp15.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket YouTube</p>
+        <ul class="benefits" aria-label="Pilihan Paket YouTube">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>YouTube IndPlan 1 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>YouTube IndPlan 3 Bulan</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="youtubeModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           SPORTIFY - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "SPORTIFY - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="sportifyChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/gzagbp.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Sportify" />
+          <h3>Sportify Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Sportify</p>
+        </div>
+        <p class="price">Mulai Rp38.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Sportify</p>
+        <ul class="benefits" aria-label="Pilihan Paket Sportify">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Sportify IndPlan 1 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Sportify IndPlan 3 Bulan</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="sportifyModal">Paket Lainnya</button>
+      </article>
+
+            <!-- =========================================================
+           WINK - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "WINK - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="winkChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/2cy9dd.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Wink" />
+          <h3>Wink Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Premium Wink</p>
+        </div>
+        <p class="price">Mulai Rp10.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Wink</p>
+        <ul class="benefits" aria-label="Pilihan Paket Wink">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Wink Sharing3-7 hari</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="winkModal">Paket Lainnya</button>
+      </article>
+
+          <!-- =========================================================
+           IQIYI - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "IQIYI - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="iqiyiChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/7m064m.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Iqiyi" />
+          <h3>Iqiyi Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Premium Iqiyi</p>
+        </div>
+        <p class="price">Mulai Rp15.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Iqiyi</p>
+        <ul class="benefits" aria-label="Pilihan Paket Iqiyi">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Wink Sharing 1 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Wink Sharing 1 Tahun</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="iqiyiModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           BSTATION - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "BSTATION - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="bstationChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/s4hpzf.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Bstation" />
+          <h3>Bstation Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Premium Bstation</p>
+        </div>
+        <p class="price">Mulai Rp15.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Bstation</p>
+        <ul class="benefits" aria-label="Pilihan Paket Bstation">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Bstation Sharing 1 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Bstation Sharing 3 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Bstation Sharing 1 Tahun</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Bstation Private 1 Bulan</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="bstationModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           REMINI - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "REMINI - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="reminiChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/ypqxvu.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Remini" />
+          <h3>Remini Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Premium Remini</p>
+        </div>
+        <p class="price">Mulai Rp15.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Remini</p>
+        <ul class="benefits" aria-label="Pilihan Paket Remini">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Remini Sharing 1 Bulan</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Remini Sharing 1 Tahun</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="reminiModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           LOKLOK - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "LOKLOK - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="loklokChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/t0t31r.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Loklok" />
+          <h3>Loklok Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Premium Loklok</p>
+        </div>
+        <p class="price">Mulai Rp26.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Loklok</p>
+        <ul class="benefits" aria-label="Pilihan Paket Loklok">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Loklok Sharing 1 Bulan 3 user</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Loklok Private 1 Bulan</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="loklokModal">Paket Lainnya</button>
+      </article>
+
+      <!-- =========================================================
+           CHATGPT - TOMBOL PEMILIHAN PAKET
+           EDIT MUDAH: cari "CHATGPT - MODAL" di bawah file.
+           ========================================================= -->
+      <article class="card app-choice-card" tabindex="0" id="chatgptChoiceCard">
+        <div class="card-header">
+          <img src="https://files.catbox.moe/ahi38i.jpg" width="200" height="90" style="display:block;margin:0 auto;border-radius:15px;" alt="Chatgpt" />
+          <h3>Chatgpt Premium</h3>
+          <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Premium Chatgpt</p>
+        </div>
+        <p class="price">Mulai Rp40.000</p>
+        <p class="description">Klik tombol di bawah untuk melihat pilihan paket Chatgpt</p>
+        <ul class="benefits" aria-label="Pilihan Paket Chatgpt">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Chatgpt Sharing 1 Bulan</li>
+        </ul>
+        <button type="button" class="btn-order app-open-btn" data-modal-target="chatgptModal">Paket Lainnya</button>
+      </article>
+    </div>
+  </section>
+
+    <!-- CARA ORDER -->
+  <div class="cara-order-box">
+    <h2 style="text-align:center;margin:0;">Cara Order</h2>
+    <div class="cara-order-grid">
+      <div class="cara-order-item"><i class="fas fa-search"></i><strong>1. Pilih Aplikasi</strong><small>Cari aplikasi yang kamu butuhkan.</small></div>
+      <div class="cara-order-item"><i class="fas fa-box-open"></i><strong>2. Pilih Paket</strong><small>Pilih durasi dan paket yang tersedia.</small></div>
+      <div class="cara-order-item"><i class="fab fa-whatsapp"></i><strong>3. Hubungi Admin</strong><small>Pesan otomatis diarahkan ke WhatsApp.</small></div>
+      <div class="cara-order-item"><i class="fas fa-check-circle"></i><strong>4. Selesaikan Pesanan</strong><small>Ikuti instruksi dari admin.</small></div>
+    </div>
+  </div>
+
+  <section class="testimonial-section" aria-label="Testimonial Pengguna">
+    <h2>Apa Kata <span>Mereka?</span></h2>
+    <div class="testimonial-grid">
+      <article class="testimonial-card" tabindex="0">
+        <div class="testimonial-header">
+          <img src="https://files.catbox.moe/4ewx6u.jpg" width="50" height="50" />
+          <div>
+            <h4>Szaell</h4>
+            <p>Owner Store</p>
+          </div>
+        </div>
+        <p class="testimonial-text">"Store ini sangat bagus dnegan menyediakan beberapa aplikasi premium dengan harga yang bisa dibilang murah."</p>
+        <div class="testimonial-stars" aria-label="Rating 5 bintang">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+        </div>
+      </article>
+      <article class="testimonial-card" tabindex="0">
+        <div class="testimonial-header">
+          <img src="https://files.catbox.moe/pua20t.jpg" width="50" height="50" />
+          <div>
+            <h4>Zarss</h4>
+            <p>Admin Store</p>
+          </div>
+        </div>
+        <p class="testimonial-text">"Tim support nya ramah dan selalu siap membantu 24/7 ketika ada kendala dan lain sebagai nya."</p>
+        <div class="testimonial-stars" aria-label="Rating 4.5 bintang">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+        </div>
+      </article>
+      <article class="testimonial-card" tabindex="0">
+        <div class="testimonial-header">
+          <img src="https://files.catbox.moe/it3fgr.jpg" width="50" height="50" />
+          <div>
+            <h4>zamm</h4>
+            <p>Admin Store</p>
+          </div>
+        </div>
+        <p class="testimonial-text">"gausah ragu udah pasti amanah, kirain awalnya bakal nipu atau apa apa ehh ternyata top markotopp"</p>
+        <div class="testimonial-stars" aria-label="Rating 5 bintang">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="kontak" aria-label="Kontak dan Call to Action">
+    <div class="container">
+      <h2>Siap Berlangganan Di Szaell Store?</h2>
+      <p class="lead">Hubungi Kami Sekarang Dan Nikmati Beberapa Aplikasi Premium Dan Ori, Stop download aplikasi bajakan.</p>
+      <div class="contact-buttons">
+        <a href="https://whatsapp.com/channel/0029VbDjMBt42Dcgmb4exh0c" target="_blank" rel="noopener" class="btn-whatsapp" aria-label="Chat WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.5rem;"></i> Saluran Whatsapp
+        </a>
+      </div>
+    </div>
+  </section>
+
+<script>
+// =========================================================
+// NAVBAR MENU + MODE GELAP/TERANG
+// =========================================================
+const burgerBtn = document.getElementById('burgerBtn');
+const navMenu = document.getElementById('navMenu');
+const themeToggleNav = document.getElementById('themeToggleNav');
+const themeIconNav = document.getElementById('themeIconNav');
+const themeTextNav = document.getElementById('themeTextNav');
+
+function closeMenu(){
+  if(!navMenu || !burgerBtn) return;
+  navMenu.classList.remove('open');
+  burgerBtn.setAttribute('aria-expanded','false');
+  burgerBtn.innerHTML='<i class="fas fa-bars" aria-hidden="true"></i>';
+}
+function openMenu(){
+  if(!navMenu || !burgerBtn) return;
+  navMenu.classList.add('open');
+  burgerBtn.setAttribute('aria-expanded','true');
+  burgerBtn.innerHTML='<i class="fas fa-times" aria-hidden="true"></i>';
+}
+if(burgerBtn && navMenu){
+  burgerBtn.addEventListener('click',()=>{
+    navMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  navMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    if(window.innerWidth < 768) closeMenu();
+  }));
+  window.addEventListener('resize',()=>{ if(window.innerWidth >= 768) closeMenu(); });
+}
+
+function setTheme(dark){
+  document.body.classList.toggle('dark-mode',dark);
+  if(themeIconNav) themeIconNav.className=dark?'fas fa-sun':'fas fa-moon';
+  if(themeTextNav) themeTextNav.textContent=dark?'Mode Terang':'Mode Gelap';
+  if(themeToggleNav) themeToggleNav.setAttribute('aria-pressed',String(dark));
+  try{localStorage.setItem('szaelTheme',dark?'dark':'light');}catch(e){}
+}
+let savedTheme='light';
+try{savedTheme=localStorage.getItem('szaelTheme')||'light';}catch(e){}
+setTheme(savedTheme==='dark');
+if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark-mode')));
+</script>
+
+
+<script>
+// =========================================================
+// TAMBAHAN FITUR TOKO - SEARCH / FILTER / BADGE / ANIMASI / WA / BACK TOP
+// =========================================================
+(function(){
+  const search = document.getElementById('storeSearch');
+  const category = document.getElementById('storeCategory');
+  const count = document.getElementById('storeResultCount');
+  const empty = document.getElementById('storeNoResults');
+  const listSection = document.getElementById('list-apk');
+  if(!listSection) return;
+
+  // Tambahkan badge yang mudah diedit tanpa mengubah isi kartu asli.
+  const badgeMap = {
+    capcutChoiceCard:'POPULER',
+    alightChoiceCard:'POPULER',
+    canvaChoiceCard:'POPULER'
+  };
+  Object.keys(badgeMap).forEach(function(id){
+    const card=document.getElementById(id);
+    if(card && !card.querySelector('.store-badge')){
+      const b=document.createElement('span');
+      b.className='store-badge';
+      b.textContent=badgeMap[id];
+      b.title='Badge ini bisa diubah dari bagian TAMBAHAN FITUR TOKO';
+      card.appendChild(b);
+    }
+  });
+
+  // Kategori ditentukan dari teks kartu, sehingga isi kartu asli tidak perlu diubah.
+  function getCategory(text){
+    text=text.toLowerCase();
+    if(/netflix|youtube|loklok/.test(text)) return 'video';
+    if(/alight|capcut|wink/.test(text)) return 'video';
+    if(/canva|picsart|lightroom/.test(text)) return 'design';
+    if(/sportify|spotify|music/.test(text)) return 'music';
+    if(/chatgpt|gemini|ai/.test(text)) return 'ai';
+    return 'other';
+  }
+
+  const cards=[...listSection.querySelectorAll('.menu-card')];
+  cards.forEach(function(card){ card.dataset.storeCategory=getCategory(card.innerText); });
+
+  function filterCards(){
+    const q=(search?.value||'').trim().toLowerCase();
+    const cat=category?.value||'all';
+    let visible=0;
+    cards.forEach(function(card){
+      const text=card.innerText.toLowerCase();
+      const matchText=!q || text.includes(q);
+      const matchCat=cat==='all' || card.dataset.storeCategory===cat;
+      const show=matchText && matchCat;
+      card.style.display=show?'':'none';
+      if(show) visible++;
+    });
+    if(count) count.textContent=visible+' aplikasi ditemukan';
+    if(empty) empty.style.display=visible?'none':'block';
+  }
+  search?.addEventListener('input',filterCards);
+  category?.addEventListener('change',filterCards);
+  filterCards();
+
+  // Animasi muncul saat scroll.
+  const revealTargets=document.querySelectorAll('.menu-card,.card,.feature-card,.testimonial-card');
+  revealTargets.forEach(el=>el.classList.add('scroll-reveal'));
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }});
+    },{threshold:.12});
+    revealTargets.forEach(el=>observer.observe(el));
+  } else revealTargets.forEach(el=>el.classList.add('is-visible'));
+
+  // Checkout WhatsApp dari semua tombol paket: pesan dibuat otomatis dari nama paket.
+  const WA_NUMBER='6281234567890';
+  document.addEventListener('click',function(e){
+    const btn=e.target.closest('.app-package-buy, .netflix-package-buy');
+    if(!btn) return;
+    const box=btn.closest('.app-package-item, .netflix-package');
+    const title=box?.querySelector('h4')?.textContent.trim() || 'paket premium';
+    const duration=box?.querySelector('.app-package-duration, .netflix-package-duration')?.textContent.trim() || '';
+    const price=box?.querySelector('.app-package-price, .netflix-package-price')?.textContent.trim() || '';
+    const msg='Halo Szael Store, saya ingin membeli '+title+(duration?' - '+duration:'')+(price?' ('+price+')':'')+'.';
+    btn.setAttribute('href','https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg));
+    btn.setAttribute('target','_blank');
+    btn.setAttribute('rel','noopener');
+  });
+})();
+</script>
+
+<!-- =========================================================
+     FLOATING WHATSAPP + BACK TO TOP
+     ========================================================= -->
+<a class="floating-wa" href="https://wa.me/6281234567890?text=Halo%20Szael%20Store%2C%20saya%20ingin%20bertanya%20tentang%20paket%20premium." target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  <span class="wa-label">Chat WhatsApp</span>
+</a>
+<button type="button" class="back-top" id="backTop" aria-label="Kembali ke atas">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+<script>
+(function(){
+  const topBtn=document.getElementById('backTop');
+  if(!topBtn) return;
+  window.addEventListener('scroll',function(){ topBtn.classList.toggle('show',window.scrollY>450); },{passive:true});
+  topBtn.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
+
+<script>
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    const loader = document.getElementById('pageLoader');
+    if (loader) loader.classList.add('loader-hidden');
+
+    // Popup informasi muncul bersamaan saat tampilan website mulai muncul.
+    document.dispatchEvent(new CustomEvent('szael:page-ready'));
+  }, 900);
+});
+</script>
+
+
+<!-- Netflix Package Modal -->
+<div class="netflix-modal" id="netflixModal" aria-hidden="true">
+  <div class="netflix-modal-box" role="dialog" aria-modal="true" aria-labelledby="netflixModalTitle">
+    <button type="button" class="netflix-modal-close" id="closeNetflixModal" aria-label="Tutup">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+
+    <h2 class="netflix-modal-title" id="netflixModalTitle">Pilih Paket Netflix</h2>
+    <p class="netflix-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+
+    <div class="netflix-package-list">
+      <div class="netflix-package">
+        <div class="netflix-package-head">
+          <img class="netflix-package-logo" src="https://files.catbox.moe/600z50.jpg" alt="Netflix">
+          <h4>Netflix Private</h4>
+        </div>
+        <p class="netflix-package-duration">Premium On 1 Bulan</p>
+        <p class="netflix-package-price">Rp190.000 / RM43,17</p>
+        <a href="#kontak" class="btn-order netflix-package-buy">Pesan Sekarang</a>
+      </div>
+
+      <div class="netflix-package">
+        <div class="netflix-package-head">
+          <img class="netflix-package-logo" src="https://files.catbox.moe/600z50.jpg" alt="Netflix">
+          <h4>Netflix Semi-Private</h4>
+        </div>
+        <p class="netflix-package-duration">Premium On 1 Bulan</p>
+        <p class="netflix-package-price">Rp65.000 / RM14,80</p>
+        <a href="#kontak" class="btn-order netflix-package-buy">Pesan Sekarang</a>
+      </div>
+
+      <div class="netflix-package">
+        <div class="netflix-package-head">
+          <img class="netflix-package-logo" src="https://files.catbox.moe/600z50.jpg" alt="Netflix">
+          <h4>Netflix Semi-Private</h4>
+        </div>
+        <p class="netflix-package-duration">Premium On 3 Bulan</p>
+        <p class="netflix-package-price">Rp135.000 / RM30,73</p>
+        <a href="#kontak" class="btn-order netflix-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     ALIGHT MOTION - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="alightModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="alightModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="alightModalTitle">Pilih Paket Alight Motion</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/fl1vsn.png" alt="Alight Motion"><h4>Alight Motion Private</h4></div>
+        <p class="app-package-duration">Premium On 1 Tahun</p>
+        <p class="app-package-price">Rp10.000 / RM2,28</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/fl1vsn.png" alt="Alight Motion"><h4>Alight Motion Sharing</h4></div>
+        <p class="app-package-duration">Premium On 1 Tahun</p>
+        <p class="app-package-price">Rp5.000 / RM1,14</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     CAPCUT - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="capcutModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="capcutModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="capcutModalTitle">Pilih Paket Capcut</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/qdzv6x.jpg" alt="Capcut"><h4>Capcut Private</h4></div>
+        <p class="app-package-duration">Premium On 1 Minggu</p>
+        <p class="app-package-price">Rp5.000 / RM1,14</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/qdzv6x.jpg" alt="Capcut"><h4>Capcut Private</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp32.000 / RM7,29</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     CANVA - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="canvaModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="canvaModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="canvaModalTitle">Pilih Paket Canva</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/evbhw1.jpg" alt="Canva"><h4>Canva Head</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp10.000 / RM2,28</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/evbhw1.jpg" alt="Canva"><h4>Canva Head</h4></div>
+        <p class="app-package-duration">Premium On 3 Bulan</p>
+        <p class="app-package-price">Rp15.000 / RM3,41</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     YOUTUBE - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="youtubeModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="youtubeModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="youtubeModalTitle">Pilih Paket YouTube</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/6d5o1e.jpg" alt="YouTube"><h4>YouTube IndPlan</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp15.000 / RM3,41</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/6d5o1e.jpg" alt="YouTube"><h4>YouTube IndPlan</h4></div>
+        <p class="app-package-duration">Premium On 3 Bulan</p>
+        <p class="app-package-price">Rp30.000 / RM6,82</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     SPORTIFY - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="sportifyModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="sportifyModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="sportifyModalTitle">Pilih Paket Sportify</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/gzagbp.jpg" alt="Sportify"><h4>Sportify IndPlan</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp38.000 / RM8,62</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/gzagbp.jpg" alt="Sportify"><h4>Sportify IndPlan</h4></div>
+        <p class="app-package-duration">Premium On 3 Bulan</p>
+        <p class="app-package-price">Rp68.000 / RM15,48</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     Wink - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="winkModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="winkModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="winkModalTitle">Pilih Paket Wink</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/2cy9dd.jpg" alt="Wink"><h4>Wink Sharing</h4></div>
+        <p class="app-package-duration">Premium On 3-7 hari</p>
+        <p class="app-package-price">Rp10.000 / RM2,28</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     IQIYI - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="iqiyiModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="iqiyiModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="iqiyiModalTitle">Pilih Paket Iqiyi</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/7m064m.jpg" alt="iqiyi"><h4>Iqiyi Sharing Premium</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp15.000 / RM3,41</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/7m064m.jpg" alt="iqiyi"><h4>Iqiyi Sharing Premium</h4></div>
+        <p class="app-package-duration">Premium On 1 Tahun</p>
+        <p class="app-package-price">Rp20.000 / RM4,55</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     BSTATION - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="bstationModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="bstationModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="bstationModalTitle">Pilih Paket Bstation</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/s4hpzf.jpg" alt="bstation"><h4>Bsation Sharing</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp15.000 / RM3,41</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/s4hpzf.jpg" alt="bstation"><h4>Bstation Sharing </h4></div>
+        <p class="app-package-duration">Premium On 3 Bulan</p>
+        <p class="app-package-price">Rp20.000 / RM4,54</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/s4hpzf.jpg" alt="bstation"><h4>Bstation Sharing </h4></div>
+        <p class="app-package-duration">Premium On 1 Tahun</p>
+        <p class="app-package-price">Rp30.000 / RM6,81</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/s4hpzf.jpg" alt="bstation"><h4>Bstation Private </h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp55.000 / RM12,48</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     REMINI - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="reminiModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="reminiModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="reminiModalTitle">Pilih Paket Remini</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/ypqxvu.jpg" alt="remini"><h4>Remini Sharing</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp15.000 / RM3,41</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/ypqxvu.jpg" alt="remini"><h4>Remini Sharing</h4></div>
+        <p class="app-package-duration">Premium On 1 Tahun</p>
+        <p class="app-package-price">Rp20.000 / RM4,54</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     LOKLOK - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="loklokModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="loklokModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="loklokModalTitle">Pilih Paket Remini</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/t0t31r.jpg" alt="loklok"><h4>Loklok Sharing</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan ( 3 user )</p>
+        <p class="app-package-price">Rp26.000 / RM5,90</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/t0t31r.jpg" alt="loklok"><h4>Loklok Private</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp55.000 / RM12,48</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     CHATGPT - MODAL
+     EDIT MUDAH: harga/nama paket ada di bagian ini.
+     ========================================================= -->
+<div class="app-package-modal" id="chatgptModal" aria-hidden="true">
+  <div class="app-package-modal-box" role="dialog" aria-modal="true" aria-labelledby="chatgptModalTitle">
+    <button type="button" class="app-package-modal-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+    <h2 class="app-package-modal-title" id="loklokModalTitle">Pilih Paket Chatgpt</h2>
+    <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
+    <div class="app-package-list">
+      <div class="app-package-item">
+        <div class="app-package-head"><img class="app-package-logo" src="https://files.catbox.moe/ahi38i.jpg" alt="chatgpt"><h4>Chatgpt Sharing</h4></div>
+        <p class="app-package-duration">Premium On 1 Bulan</p>
+        <p class="app-package-price">Rp40.000 / RM9,08</p>
+        <a href="#kontak" class="btn-order app-package-buy">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// Netflix package popup
+(function () {
+  const netflixModal = document.getElementById('netflixModal');
+  const openNetflixModal = document.getElementById('openNetflixModal');
+  const closeNetflixModal = document.getElementById('closeNetflixModal');
+
+  if (!netflixModal || !openNetflixModal || !closeNetflixModal) return;
+
+  function openModal() {
+    netflixModal.classList.add('show');
+    netflixModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('netflix-modal-open');
+  }
+
+  function closeModal() {
+    netflixModal.classList.remove('show');
+    netflixModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('netflix-modal-open');
+  }
+
+  openNetflixModal.addEventListener('click', openModal);
+  closeNetflixModal.addEventListener('click', closeModal);
+
+  netflixModal.addEventListener('click', function (event) {
+    if (event.target === netflixModal) closeModal();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && netflixModal.classList.contains('show')) {
+      closeModal();
+    }
+  });
+
+  netflixModal.querySelectorAll('a[href="#kontak"]').forEach(function (link) {
+    link.addEventListener('click', closeModal);
+  });
+})();
+
+</script>
+
+
+<!-- =========================================================
+     APP PACKAGE POPUPS - JAVASCRIPT
+     EDIT MUDAH: semua tombol Beli Sekarang memakai data-modal-target.
+     ========================================================= -->
+<script>
+(function () {
+  const modals = document.querySelectorAll('.app-package-modal');
+  const openButtons = document.querySelectorAll('.app-open-btn');
+
+  function closeAllAppModals() {
+    modals.forEach(function (modal) {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+    document.body.classList.remove('netflix-modal-open');
+  }
+
+  openButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const targetId = button.getAttribute('data-modal-target');
+      const modal = document.getElementById(targetId);
+      if (!modal) return;
+      closeAllAppModals();
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('netflix-modal-open');
+    });
+  });
+
+  modals.forEach(function (modal) {
+    const closeButton = modal.querySelector('.app-package-modal-close');
+    if (closeButton) closeButton.addEventListener('click', closeAllAppModals);
+
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) closeAllAppModals();
+    });
+
+    modal.querySelectorAll('a[href="#kontak"]').forEach(function (link) {
+      link.addEventListener('click', closeAllAppModals);
+    });
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeAllAppModals();
+  });
+})();
+</script>
+
+
+
+<!-- =========================================================
+     POPUP INFO PENTING - MUNCUL SETELAH LOADING SELESAI
+     ========================================================= -->
+<div class="info-popup-modal" id="infoPopupModal" aria-hidden="true">
+  <div class="info-popup-box" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle">
+    <button type="button" class="info-popup-close" id="closeInfoPopup" aria-label="Tutup">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <div class="info-popup-icon"><i class="fas fa-bullhorn" aria-hidden="true"></i></div>
+    <h2 class="info-popup-title" id="infoPopupTitle">Informasi Penting</h2>
+    <p class="info-popup-subtitle">Jangan lewatkan informasi terbaru dari Szael Market.</p>
+    <div class="info-popup-list">
+      <div class="info-popup-item">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <div><strong>Join Saluran WhatsApp</strong><span>Dapatkan info produk, promo, dan update terbaru langsung dari Szael Market.</span></div>
+      </div>
+      <div class="info-popup-item">
+        <i class="fas fa-box-open" aria-hidden="true"></i>
+        <div><strong>Produk Terbaru</strong><span>Produk dan pilihan paket baru akan diinformasikan secara berkala.</span></div>
+      </div>
+      <div class="info-popup-item">
+        <i class="fas fa-sync-alt" aria-hidden="true"></i>
+        <div><strong>Update Store</strong><span>Perubahan harga, paket, ketersediaan, dan informasi layanan dapat diperbarui sewaktu-waktu.</span></div>
+      </div>
+    </div>
+    <div class="info-popup-actions">
+      <a class="info-popup-btn info-popup-btn-primary" href="https://whatsapp.com/channel/0029VbDjMBt42Dcgmb4exh0c" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Join Saluran WA
+      </a>
+      <button type="button" class="info-popup-btn info-popup-btn-secondary" id="closeInfoPopupBtn">Mengerti</button>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     PILIH ADMIN WHATSAPP
+     Admin 1: 081394034310
+     Admin 2: 087888870173
+     ========================================================= -->
+<div class="admin-choice-modal" id="adminChoiceModal" aria-hidden="true">
+  <div class="admin-choice-box" role="dialog" aria-modal="true" aria-labelledby="adminChoiceTitle">
+    <button type="button" class="admin-choice-close" id="closeAdminChoice" aria-label="Tutup">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+
+    <h2 class="admin-choice-title" id="adminChoiceTitle">Pilih Admin</h2>
+    <p class="admin-choice-subtitle">Silakan pilih admin yang ingin dihubungi.</p>
+
+    <button type="button" class="admin-choice-btn" data-admin-number="6281394034310">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span>
+        <strong>Admin 1 ( 08.00-14.59 )</strong>
+        <small>Hubungi Admin 1 melalui WhatsApp</small>
+      </span>
+    </button>
+
+    <button type="button" class="admin-choice-btn" data-admin-number="6287888870173">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span>
+        <strong>Admin 2 ( 15.00-23.00 )</strong>
+        <small>Hubungi Admin 2 melalui WhatsApp</small>
+      </span>
+    </button>
+  </div>
+</div>
+
+
+
+<script id="szael-info-popup-js">
+(function(){
+  const modal=document.getElementById('infoPopupModal');
+  const closeBtn=document.getElementById('closeInfoPopup');
+  const closeMain=document.getElementById('closeInfoPopupBtn');
+  if(!modal) return;
+
+  function openInfoPopup(){
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('netflix-modal-open');
+  }
+
+  function closeInfoPopup(){
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('netflix-modal-open');
+  }
+
+  closeBtn?.addEventListener('click',closeInfoPopup);
+  closeMain?.addEventListener('click',closeInfoPopup);
+  modal.addEventListener('click',function(e){
+    if(e.target===modal) closeInfoPopup();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') closeInfoPopup();
+  });
+
+  // Tampilkan tepat saat loader mulai menghilang dan halaman web mulai terlihat.
+  document.addEventListener('szael:page-ready',openInfoPopup);
+})();
+</script>
+
+<script id="szael-admin-pilihan-js">
+/* =========================================================
+   PILIH ADMIN WHATSAPP
+   Tombol "Pesan Sekarang" -> pilih Admin 1 / Admin 2.
+   Pesan paket yang sudah ada tetap dipertahankan.
+   ========================================================= */
+(function(){
+  const adminModal = document.getElementById('adminChoiceModal');
+  const closeAdmin = document.getElementById('closeAdminChoice');
+  let pendingMessage = '';
+
+  if(!adminModal) return;
+
+  function openAdminChoice(message){
+    pendingMessage = message || 'Halo Szael Store, saya ingin membeli paket premium.';
+    adminModal.classList.add('show');
+    adminModal.setAttribute('aria-hidden','false');
+    document.body.classList.add('netflix-modal-open');
+  }
+
+  function closeAdminChoice(){
+    adminModal.classList.remove('show');
+    adminModal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('netflix-modal-open');
+  }
+
+  /*
+   * Menangkap tombol paket sebelum script lama memproses link.
+   * Dengan begitu fitur pesan otomatis yang sudah ada tidak rusak.
+   */
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest('.app-package-buy, .netflix-package-buy');
+    if(!btn) return;
+
+    const box = btn.closest('.app-package-item, .netflix-package');
+    const title = box?.querySelector('h4')?.textContent.trim() || 'paket premium';
+    const duration = box?.querySelector('.app-package-duration, .netflix-package-duration')?.textContent.trim() || '';
+    const price = box?.querySelector('.app-package-price, .netflix-package-price')?.textContent.trim() || '';
+
+    const msg = 'Halo Szael Store, saya ingin membeli ' +
+      title +
+      (duration ? ' - ' + duration : '') +
+      (price ? ' (' + price + ')' : '') + '.';
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    openAdminChoice(msg);
+  }, true);
+
+  adminModal.querySelectorAll('.admin-choice-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const number = btn.getAttribute('data-admin-number');
+      const url = 'https://wa.me/' + number + '?text=' + encodeURIComponent(pendingMessage);
+
+      closeAdminChoice();
+      window.open(url, '_blank', 'noopener');
+    });
+  });
+
+  closeAdmin?.addEventListener('click', closeAdminChoice);
+
+  adminModal.addEventListener('click', function(e){
+    if(e.target === adminModal) closeAdminChoice();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeAdminChoice();
+  });
+})();
+</script>
+
+
+<!-- AUTO STORE STATUS -->
+<script id="szael-auto-store-status">
+(function(){
+  function updateStoreStatus(){
+    const now = new Date();
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+    const openTime = 8 * 60;
+    const closeTime = 23 * 60;
+
+    const statusText = document.querySelector('.store-status-online');
+    const statusDot = document.querySelector('.store-status-dot');
+    const statusSmall = statusText?.parentElement?.querySelector('small');
+
+    if(!statusText || !statusDot) return;
+
+    const online = currentMinutes >= openTime && currentMinutes < closeTime;
+
+    if(online){
+      statusText.textContent = 'STORE ONLINE';
+      statusText.style.color = '#22c55e';
+      statusDot.style.backgroundColor = '#22c55e';
+      statusDot.style.boxShadow = '0 0 10px #22c55e';
+      if(statusSmall) statusSmall.textContent = 'Admin siap menerima pesanan.';
+    }else{
+      statusText.textContent = 'STORE OFFLINE';
+      statusText.style.color = '#ef4444';
+      statusDot.style.backgroundColor = '#ef4444';
+      statusDot.style.boxShadow = '0 0 10px #ef4444';
+      if(statusSmall) statusSmall.textContent = 'Admin sedang tidak tersedia.';
+    }
+  }
+
+  updateStoreStatus();
+  setInterval(updateStoreStatus, 60000);
+})();
+</script>
+
+</body>
+</html>
