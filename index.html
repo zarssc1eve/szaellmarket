@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Aplikasi Premium By Szaell</title>
+<title>Szaell Market Premium</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -1758,45 +1758,8 @@ body.szael-maintenance-active #infoPopupModal{display:none!important}
   .szael-slider-next{right:-8px}
 }
 
-/* =========================================================
-   FITUR TAMBAHAN: HERO BANNER + FLOATING ANNOUNCEMENT
-   ========================================================= */
-.szael-floating-announcement{
-  position:fixed;left:18px;bottom:18px;z-index:1000;
-  animation:szaelFloatIn .45s ease;
-}
-.szael-floating-toggle{
-  width:46px;height:46px;border:0;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:#2563eb;color:#fff;cursor:pointer;
-  box-shadow:0 10px 28px rgba(37,99,235,.28);
-  transition:transform .2s ease,background .2s ease;
-}
-.szael-floating-toggle:hover{transform:scale(1.06);background:#1d4ed8}
-.szael-floating-content{
-  position:absolute;left:0;bottom:56px;width:min(330px,calc(100vw - 36px));
-  display:flex;align-items:flex-start;gap:10px;padding:13px 14px;
-  border:1px solid rgba(37,99,235,.18);border-radius:16px;
-  background:rgba(255,255,255,.94);backdrop-filter:blur(12px);
-  box-shadow:0 14px 35px rgba(0,0,0,.16);color:#111827;
-  transform-origin:bottom left;
-  transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
-}
-.szael-floating-announcement.closed .szael-floating-content{
-  opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px) scale(.96);
-}
-.szael-floating-content strong{display:block;font-size:.86rem;margin-bottom:3px}
-.szael-floating-content span{display:block;font-size:.76rem;line-height:1.45;opacity:.72}
-.szael-floating-close{margin-left:auto;border:0;background:transparent;cursor:pointer;font-size:1rem;opacity:.55;padding:2px}
-.szael-floating-close:hover{opacity:1}
-body.dark-mode .szael-floating-content{background:rgba(17,24,39,.94);color:#f9fafb;border-color:rgba(147,197,253,.16)}
-@keyframes szaelFloatIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media(max-width:600px){
-  .szael-hero-banner{margin-top:10px;padding:11px 13px;min-height:64px}
-   .szael-floating-announcement{left:12px;bottom:12px}
-    }
-
 </style>
+<style id="szael-cart-css">.szael-cart-fab{position:fixed;left:18px;bottom:18px;z-index:9991;width:56px;height:56px;border:0;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 10px 25px rgba(0,0,0,.22);cursor:pointer;transition:.2s}.szael-cart-fab:hover{transform:translateY(-3px) scale(1.04)}.szael-cart-count{position:absolute;top:-4px;right:-3px;min-width:21px;height:21px;padding:0 5px;border-radius:999px;background:#ef4444;color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff}.szael-cart-add{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-height:40px;margin-top:9px;padding:8px 10px;border:1px solid #2563eb;border-radius:10px;background:#fff;color:#2563eb;font-weight:800;cursor:pointer;transition:.2s}.szael-cart-add:hover{background:#eff6ff;transform:translateY(-1px)}.szael-cart-modal{position:fixed;inset:0;z-index:100004;display:flex;align-items:flex-end;justify-content:center;padding:16px;background:rgba(0,0,0,.68);backdrop-filter:blur(6px);opacity:0;visibility:hidden;pointer-events:none;transition:.22s}.szael-cart-modal.show{opacity:1;visibility:visible;pointer-events:auto}.szael-cart-box{width:min(520px,100%);max-height:85vh;overflow-y:auto;background:#fff;color:#111827;border-radius:22px;padding:20px;box-shadow:0 25px 70px rgba(0,0,0,.35);transform:translateY(25px);transition:.22s}.szael-cart-modal.show .szael-cart-box{transform:none}.szael-cart-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.szael-cart-head h2{margin:0;color:#2563eb;font-size:1.3rem}.szael-cart-close{width:38px;height:38px;border:0;border-radius:50%;background:#eef2f7;color:#475569;cursor:pointer;font-size:1rem}.szael-cart-empty{text-align:center;padding:28px 10px;color:#64748b}.szael-cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:13px 0;border-bottom:1px solid #e5e7eb}.szael-cart-item strong{display:block;font-size:.94rem}.szael-cart-item small{display:block;color:#64748b;margin-top:3px}.szael-cart-controls{display:flex;align-items:center;gap:7px}.szael-cart-qty{min-width:24px;text-align:center;font-weight:800}.szael-cart-qty-btn{width:29px;height:29px;border:0;border-radius:8px;background:#eef2f7;color:#374151;font-weight:900;cursor:pointer}.szael-cart-remove{border:0;background:none;color:#ef4444;font-size:.78rem;cursor:pointer;margin-left:3px}.szael-cart-total{display:flex;justify-content:space-between;gap:10px;margin-top:16px;padding-top:12px;font-size:1rem;font-weight:800}.szael-cart-checkout{width:100%;min-height:46px;margin-top:14px;border:0;border-radius:12px;background:#25d366;color:#fff;font-weight:900;cursor:pointer;font-size:.95rem}.szael-cart-checkout:disabled{opacity:.5;cursor:not-allowed}body.dark-mode .szael-cart-box{background:#1f2937;color:#f9fafb}body.dark-mode .szael-cart-item{border-color:#374151}body.dark-mode .szael-cart-item small{color:#9ca3af}body.dark-mode .szael-cart-qty-btn,body.dark-mode .szael-cart-close{background:#374151;color:#f9fafb}@media(max-width:600px){.szael-cart-fab{left:14px;bottom:14px}.szael-cart-box{padding:17px;border-radius:19px}.szael-cart-modal{padding:10px}}</style>
 </head>
 <body>
 <!-- NAVBAR MENU - KEMBALI KE NAVBAR SEBELUM SIDEBAR -->
@@ -1876,7 +1839,7 @@ body.dark-mode .szael-floating-content{background:rgba(17,24,39,.94);color:#f9fa
 <div aria-label="Produk terlaris" class="szael-popular-section">
 <h3 class="szael-popular-title"><span>🔥</span> Produk Terlaris</h3>
 <div class="szael-popular-grid">
-<a class="szael-popular-card" href="#netflixChoiceCard"><span class="szael-popular-badge">TERLARIS</span><img alt="Netflix" src="https://files.catbox.moe/600z50.jpg"/><span><strong>Netflix Premium</strong><small>Mulai Rp65.000</small></span></a>
+<a class="szael-popular-card" href="#alightChoiceCard"><span class="szael-popular-badge">TERLARIS</span><img alt="alight" src="https://files.catbox.moe/fl1vsn.png"/><span><strong>Alight motion Premium</strong><small>Mulai Rp5.000</small></span></a>
 <a class="szael-popular-card" href="#capcutChoiceCard"><span class="szael-popular-badge">POPULER</span><img alt="Capcut" src="https://files.catbox.moe/qdzv6x.jpg"/><span><strong>Capcut Premium</strong><small>Mulai Rp5.000</small></span></a>
 <a class="szael-popular-card" href="#canvaChoiceCard"><span class="szael-popular-badge">POPULER</span><img alt="Canva" src="https://files.catbox.moe/evbhw1.jpg"/><span><strong>Canva Premium</strong><small>Mulai Rp10.000</small></span></a>
 </div>
@@ -2115,7 +2078,7 @@ body.dark-mode .szael-floating-content{background:rgba(17,24,39,.94);color:#f9fa
 <article class="card app-choice-card" id="alightChoiceCard" tabindex="0">
 <div class="card-header">
 <img alt="Alight Motion" height="90" src="https://files.catbox.moe/fl1vsn.png" style="display:block;margin:0 auto;border-radius:15px;" width="200"/>
-<h3>Alight Motion Premium</h3><span class="szael-product-badge promo">PROMO</span>
+<h3>Alight Motion Premium</h3><span class="szael-product-badge promo">PROMO</span><span class="szael-product-badge best">TERLARIS</span>
 <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Alight Motion</p>
 </div>
 <p class="price"><span class="szael-price-old">Rp8.000</span><span class="szael-price-new">Mulai Rp5.000</span></p>
@@ -2133,7 +2096,7 @@ body.dark-mode .szael-floating-content{background:rgba(17,24,39,.94);color:#f9fa
 <article class="card app-choice-card" id="capcutChoiceCard" tabindex="0">
 <div class="card-header">
 <img alt="Capcut" height="90" src="https://files.catbox.moe/qdzv6x.jpg" style="display:block;margin:0 auto;border-radius:15px;" width="200"/>
-<h3>Capcut Premium</h3>
+<h3>Capcut Premium</h3><span class="szael-product-badge promo">PROMO</span>
 <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Capcut</p>
 </div>
 <p class="price">Mulai Rp5.000</p>
@@ -2206,7 +2169,7 @@ body.dark-mode .szael-floating-content{background:rgba(17,24,39,.94);color:#f9fa
 <article class="card app-choice-card" id="sportifyChoiceCard" tabindex="0">
 <div class="card-header">
 <img alt="Sportify" height="90" src="https://files.catbox.moe/gzagbp.jpg" style="display:block;margin:0 auto;border-radius:15px;" width="200"/>
-<h3>Sportify Premium</h3><span class="szael-product-badge promo">PROMO</span>
+<h3>Sportify Premium</h3>
 <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Sportify</p>
 </div>
 <p class="price"><span class="szael-price-old">Rp45.000</span><span class="szael-price-new">Mulai Rp38.000</span></p>
@@ -2279,7 +2242,7 @@ body.dark-mode .szael-floating-content{background:rgba(17,24,39,.94);color:#f9fa
 <article class="card app-choice-card" id="reminiChoiceCard" tabindex="0">
 <div class="card-header">
 <img alt="Remini" height="90" src="https://files.catbox.moe/ypqxvu.jpg" style="display:block;margin:0 auto;border-radius:15px;" width="200"/>
-<h3>Remini Premium</h3>
+<h3>Remini Premium</h3><span class="szael-product-badge new">NEW</span>
 <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Premium Remini</p>
 </div>
 <p class="price">Mulai Rp15.000</p>
@@ -2315,7 +2278,7 @@ body.dark-mode .szael-floating-content{background:rgba(17,24,39,.94);color:#f9fa
 <article class="card app-choice-card" id="chatgptChoiceCard" tabindex="0">
 <div class="card-header">
 <img alt="Chatgpt" height="90" src="https://files.catbox.moe/ahi38i.jpg" style="display:block;margin:0 auto;border-radius:15px;" width="200"/>
-<h3>Chatgpt Premium</h3>
+<h3>Chatgpt Premium</h3><span class="szael-product-badge new">NEW</span>
 <p class="duration"><i class="fas fa-tags"></i> Pilih Paket Premium Chatgpt</p>
 </div>
 <p class="price">Mulai Rp40.000</p>
@@ -3172,58 +3135,6 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
   });
 })();
 </script>
-<!-- FLOATING ANNOUNCEMENT - BISA OPEN / CLOSE -->
-<div class="szael-floating-announcement" id="szaelFloatingAnnouncement" role="status">
-<button aria-expanded="true" aria-label="Tutup pengumuman" class="szael-floating-toggle" id="szaelFloatingToggle" type="button">
-<i aria-hidden="true" class="fas fa-bullhorn"></i>
-</button>
-<div class="szael-floating-content">
-<div><strong>Info Szael Store</strong><span>Cek banner dan pengumuman terbaru sebelum order.</span></div>
-<button aria-label="Tutup pengumuman" class="szael-floating-close" id="szaelFloatingClose" type="button">×</button>
-</div>
-</div>
-<script id="szael-app-slider-buttons">
-(function(){
-  const slider=document.getElementById('szaelAppSlider');
-  const prev=document.getElementById('szaelAppPrev');
-  const next=document.getElementById('szaelAppNext');
-  if(!slider || !prev || !next) return;
-  function getStep(){
-    const card=slider.querySelector('.menu-card');
-    if(!card) return slider.clientWidth*.85;
-    const gap=parseFloat(getComputedStyle(slider).gap)||0;
-    return card.getBoundingClientRect().width+gap;
-  }
-  function updateButtons(){
-    const max=slider.scrollWidth-slider.clientWidth-2;
-    prev.disabled=slider.scrollLeft<=2;
-    next.disabled=slider.scrollLeft>=max;
-  }
-  prev.addEventListener('click',()=>slider.scrollBy({left:-getStep(),behavior:'smooth'}));
-  next.addEventListener('click',()=>slider.scrollBy({left:getStep(),behavior:'smooth'}));
-  slider.addEventListener('scroll',updateButtons,{passive:true});
-  window.addEventListener('resize',updateButtons);
-  updateButtons();
-})();
-</script>
-<!-- FLOATING ANNOUNCEMENT -->
-<script id="szael-extra-ui-features">
-(function(){
-  const floating=document.getElementById('szaelFloatingAnnouncement');
-  const toggle=document.getElementById('szaelFloatingToggle');
-  const close=document.getElementById('szaelFloatingClose');
-  const content=floating?.querySelector('.szael-floating-content');
-  function setFloating(open){
-    if(!floating || !content || !toggle) return;
-    floating.classList.toggle('closed',!open);
-    content.setAttribute('aria-hidden',String(!open));
-    toggle.setAttribute('aria-expanded',String(open));
-    toggle.setAttribute('aria-label',open?'Tutup pengumuman':'Buka pengumuman');
-  }
-  toggle?.addEventListener('click',()=>setFloating(floating?.classList.contains('closed')));
-  close?.addEventListener('click',()=>setFloating(false));
-})();
-</script>
 <!-- AUTO STORE STATUS -->
 <script id="szael-auto-store-status">
 (function(){
@@ -3328,7 +3239,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
   window.addEventListener('scroll',updateNav,{passive:true}); updateNav();
 
   /* 40. Notifikasi kecil produk pilihan (tanpa mengklaim transaksi nyata). */
-  const messages=['🔥 Netflix sedang banyak dipilih','⚡ Capcut jadi pilihan populer','🎨 Canva cocok untuk kebutuhan desain','🎵 Sportify tersedia di Szaell Store'];
+  const messages=['🔥 Alight Motion sedang banyak dipilih','⚡ Diskon terbaru menanti mu','Jangan lupa untuk bergabung saluran agar tidak ketinggalan info menarik','🎵 Chatgpt tersedia di Szaell Store'];
   let i=0;
   function showStoreChoice(){
     if(window.SZAEL_MAINTENANCE_MODE || typeof window.szaelToast!=='function') return;
@@ -3338,5 +3249,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
   setInterval(showStoreChoice,18000);
 })();
 </script>
+<button aria-label="Buka keranjang" class="szael-cart-fab" id="szaelCartFab" type="button"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="szael-cart-count" id="szaelCartCount">0</span></button><div aria-hidden="true" class="szael-cart-modal" id="szaelCartModal"><div class="szael-cart-box" role="dialog" aria-modal="true" aria-labelledby="szaelCartTitle"><div class="szael-cart-head"><h2 id="szaelCartTitle">🛒 Keranjang</h2><button aria-label="Tutup keranjang" class="szael-cart-close" id="szaelCartClose" type="button"><i class="fas fa-times"></i></button></div><div id="szaelCartList"></div><div class="szael-cart-total"><span>Total</span><strong id="szaelCartTotal">Rp0</strong></div><button class="szael-cart-checkout" id="szaelCartCheckout" type="button" disabled><i class="fab fa-whatsapp"></i> Checkout Semua ke WhatsApp</button></div></div>
+<script id="szael-cart-js">(function(){const fab=document.getElementById('szaelCartFab'),modal=document.getElementById('szaelCartModal'),close=document.getElementById('szaelCartClose'),list=document.getElementById('szaelCartList'),count=document.getElementById('szaelCartCount'),totalEl=document.getElementById('szaelCartTotal'),checkout=document.getElementById('szaelCartCheckout');if(!fab||!modal||!list)return;let cart=[];function clean(v){return(v||'').replace(/\s+/g,' ').trim()}function priceNumber(v){const m=clean(v).replace(/\./g,'').match(/Rp\s*([0-9]+)/i);return m?parseInt(m[1],10):0}function rupiah(n){return'Rp'+Number(n||0).toLocaleString('id-ID')}function openCart(){modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.classList.add('netflix-modal-open');render()}function closeCart(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.classList.remove('netflix-modal-open')}function render(){const itemCount=cart.reduce((a,x)=>a+x.qty,0),total=cart.reduce((a,x)=>a+x.price*x.qty,0);count.textContent=itemCount;totalEl.textContent=total?rupiah(total):'Rp0';checkout.disabled=!cart.length;if(!cart.length){list.innerHTML='<div class="szael-cart-empty"><i class="fas fa-shopping-basket" style="font-size:2rem;margin-bottom:9px"></i><br>Keranjang masih kosong.<br><small>Pilih beberapa paket untuk checkout sekaligus.</small></div>';return}list.innerHTML=cart.map((x,i)=>'<div class="szael-cart-item"><div><strong>'+x.title+'</strong><small>'+x.duration+' • '+x.priceText+'</small></div><div class="szael-cart-controls"><button class="szael-cart-qty-btn" data-action="minus" data-index="'+i+'" type="button">−</button><span class="szael-cart-qty">'+x.qty+'</span><button class="szael-cart-qty-btn" data-action="plus" data-index="'+i+'" type="button">+</button><button class="szael-cart-remove" data-action="remove" data-index="'+i+'" type="button">Hapus</button></div></div>').join('')}function addItem(btn){const box=btn.closest('.app-package-item,.netflix-package');if(!box)return;const title=clean(box.querySelector('h4')?.textContent)||'Paket Premium',duration=clean(box.querySelector('.app-package-duration,.netflix-package-duration')?.textContent)||'',priceText=clean(box.querySelector('.app-package-price,.netflix-package-price')?.textContent)||'',price=priceNumber(priceText),key=title+'|'+duration+'|'+priceText,existing=cart.find(x=>x.key===key);if(existing)existing.qty++;else cart.push({key,title,duration,priceText,price,qty:1});render();if(typeof window.szaelToast==='function')window.szaelToast(title+' ditambahkan ke keranjang')}document.addEventListener('click',function(e){const add=e.target.closest('.szael-cart-add');if(add){e.preventDefault();addItem(add);return}const action=e.target.closest('[data-action]');if(action){const i=Number(action.dataset.index);if(!cart[i])return;if(action.dataset.action==='plus')cart[i].qty++;if(action.dataset.action==='minus'){cart[i].qty--;if(cart[i].qty<=0)cart.splice(i,1)}if(action.dataset.action==='remove')cart.splice(i,1);render()}});document.querySelectorAll('.app-package-buy,.netflix-package-buy').forEach(function(btn){if(btn.parentElement&&!btn.parentElement.querySelector('.szael-cart-add')){const add=document.createElement('button');add.type='button';add.className='szael-cart-add';add.innerHTML='<i class="fas fa-cart-plus"></i> Tambah ke Keranjang';btn.insertAdjacentElement('afterend',add)}});fab.addEventListener('click',openCart);close?.addEventListener('click',closeCart);modal.addEventListener('click',e=>{if(e.target===modal)closeCart()});checkout.addEventListener('click',function(){if(!cart.length)return;const now=new Date(),mins=now.getHours()*60+now.getMinutes();let number='',admin='';if(mins>=480&&mins<900){number='6281394034310';admin='Admin 1'}else if(mins>=900&&mins<1380){number='6287888870173';admin='Admin 2'}else{if(typeof window.szaelToast==='function')window.szaelToast('Admin sedang offline. Jam operasional 08.00 - 23.00 WIB.');return}const lines=cart.map((x,i)=>(i+1)+'. '+x.title+(x.duration?' — '+x.duration:'')+' — '+x.priceText+' × '+x.qty+' = '+rupiah(x.price*x.qty));const total=cart.reduce((a,x)=>a+x.price*x.qty,0);const msg='Halo Admin Szaell Market 👋\n\nSaya ingin melakukan checkout beberapa produk:\n\n'+lines.join('\n')+'\n\n🧾 Total Pesanan: '+rupiah(total)+'\n📦 Jumlah Item: '+cart.reduce((a,x)=>a+x.qty,0)+'\n\nMohon konfirmasi ketersediaan dan proses pesanan saya. Terima kasih 🙏';const url='https://wa.me/'+number+'?text='+encodeURIComponent(msg);if(typeof window.szaelToast==='function')window.szaelToast('Menghubungkan ke '+admin+'...');setTimeout(()=>window.open(url,'_blank','noopener'),180)});render()})();</script>
 </body>
 </html>
