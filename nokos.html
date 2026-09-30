@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nokos Indonesia &amp; Luar Negeri - Szaell Store</title>
+  <meta name="description" content="Pilih Nokos Indonesia dan luar negeri berdasarkan negara, masa aktif, harga, dan ketersediaan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#2563eb;
+      --blue-dark:#1e3a8a;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --surface:#fff;
+      --soft:#f8fafc;
+      --green:#16a34a;
+      --orange:#ea580c;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .page-loader{
+      position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;
+      padding:22px;background:rgba(255,255,255,.92);backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);opacity:1;visibility:visible;
+      transition:opacity .3s ease,visibility .3s ease
+    }
+    .page-loader.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .loader-content{display:flex;flex-direction:column;align-items:center;gap:14px}
+    .loader-spinner{
+      width:52px;height:52px;border:5px solid #dbeafe;border-top-color:#2563eb;
+      border-radius:50%;animation:loader-spin .8s linear infinite
+    }
+    .loader-label{color:#1e3a8a;font-size:.9rem;font-weight:600}
+    @keyframes loader-spin{to{transform:rotate(360deg)}}
+    @media(prefers-reduced-motion:reduce){.loader-spinner{animation-duration:2s}}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Inter,Arial,sans-serif;
+      color:#1f2937;
+      background:linear-gradient(135deg,#eff6ff 0%,#eef2ff 48%,#f8fafc 100%);
+    }
+    a{color:inherit;text-decoration:none}
+    button,input,select{font:inherit}
+    .site-header{
+      color:#fff;
+      background:linear-gradient(90deg,#2563eb,#4f46e5);
+      box-shadow:0 4px 18px rgba(30,64,175,.18);
+    }
+    .header-inner,.page-shell{width:min(1120px,calc(100% - 32px));margin:0 auto}
+    .header-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{display:flex;align-items:center;gap:11px}
+    .brand-mark{
+      width:42px;height:42px;display:flex;align-items:center;justify-content:center;
+      border-radius:13px;background:#fff;color:var(--blue);font-size:1.15rem;
+      box-shadow:0 5px 15px rgba(15,23,42,.16)
+    }
+    .brand strong{display:block;font-size:1.02rem}
+    .brand small{display:block;margin-top:2px;color:#dbeafe;font-size:.72rem}
+    .back-link{
+      display:inline-flex;align-items:center;gap:8px;padding:9px 12px;
+      border:1px solid rgba(255,255,255,.28);border-radius:10px;
+      background:rgba(255,255,255,.12);font-size:.82rem;font-weight:700;
+      transition:.2s ease
+    }
+    .back-link:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
+    .page-shell{padding:42px 0 56px}
+    .hero{
+      position:relative;overflow:hidden;padding:30px;border-radius:24px;
+      background:linear-gradient(135deg,#0f172a,#1e3a8a 58%,#312e81);
+      color:#fff;box-shadow:0 18px 45px rgba(30,64,175,.2)
+    }
+    .hero::after{
+      content:"";position:absolute;right:-80px;top:-115px;width:300px;height:300px;
+      border:30px solid rgba(147,197,253,.14);border-radius:50%
+    }
+    .hero-content{position:relative;z-index:1;max-width:720px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:7px;margin-bottom:12px;
+      color:#bfdbfe;font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase
+    }
+    .hero h1{margin:0;font-size:clamp(1.7rem,4vw,2.55rem);line-height:1.15}
+    .hero p{max-width:650px;margin:12px 0 0;color:#dbeafe;line-height:1.6;font-size:.95rem}
+    .notice{
+      display:flex;align-items:flex-start;gap:10px;margin-top:18px;padding:12px 14px;
+      border:1px solid rgba(191,219,254,.24);border-radius:13px;
+      background:rgba(255,255,255,.09);color:#e0f2fe;font-size:.78rem;line-height:1.5
+    }
+    .notice i{margin-top:2px;color:#93c5fd}
+    .toolbar{
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:24px 0 14px;
+      padding:12px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.78);
+      box-shadow:0 8px 20px rgba(15,23,42,.05)
+    }
+    .search-wrap{position:relative;flex:1 1 250px}
+    .search-wrap i{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:#94a3b8}
+    .search-wrap input,.toolbar select{
+      width:100%;min-height:42px;border:1px solid #cbd5e1;border-radius:10px;
+      background:#fff;color:#1f2937;outline:none
+    }
+    .search-wrap input{padding:0 13px 0 38px}
+    .toolbar select{flex:0 0 190px;padding:0 11px}
+    .search-wrap input:focus,.toolbar select:focus{border-color:#60a5fa;box-shadow:0 0 0 3px rgba(96,165,250,.18)}
+    .result-count{margin:0 0 13px;color:var(--muted);font-size:.8rem}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .product-card{
+      position:relative;display:flex;flex-direction:column;min-height:310px;
+      padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface);
+      box-shadow:0 8px 24px rgba(15,23,42,.06);transition:.2s ease
+    }
+    .product-card:hover{transform:translateY(-4px);border-color:#93c5fd;box-shadow:0 16px 32px rgba(37,99,235,.12)}
+    .product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+    .country-icon{
+      width:49px;height:49px;display:flex;align-items:center;justify-content:center;
+      border-radius:14px;background:#eff6ff;font-size:1.7rem
+    }
+    .stock{
+      padding:5px 8px;border-radius:999px;font-size:.64rem;font-weight:800;white-space:nowrap
+    }
+    .stock.available{background:#dcfce7;color:#15803d}
+    .stock.limited{background:#ffedd5;color:#c2410c}
+    .stock.empty{background:#fee2e2;color:#b91c1c}
+    .product-card h2{margin:14px 0 4px;color:var(--blue-dark);font-size:1.03rem}
+    .country-name{margin:0;color:var(--muted);font-size:.78rem}
+    .spec-list{display:grid;gap:8px;margin:17px 0;padding:0;list-style:none}
+    .spec-list li{display:flex;justify-content:space-between;gap:12px;color:#64748b;font-size:.79rem}
+    .spec-list strong{color:#334155;text-align:right}
+    .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:auto;padding-top:13px;border-top:1px solid #f1f5f9}
+    .price{color:var(--blue);font-size:1.12rem;font-weight:900}
+    .duration{color:#64748b;font-size:.72rem}
+    .order-btn{
+      display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-height:42px;
+      margin-top:13px;border:0;border-radius:10px;background:var(--blue);color:#fff;
+      cursor:pointer;font-size:.82rem;font-weight:800;transition:.2s ease
+    }
+    .order-btn:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px)}
+    .order-btn:disabled{background:#cbd5e1;color:#64748b;cursor:not-allowed}
+    .empty-state{display:none;padding:35px 15px;text-align:center;color:var(--muted)}
+    .empty-state i{display:block;margin-bottom:10px;color:#94a3b8;font-size:1.7rem}
+    .guide{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;
+      padding:18px;border:1px solid #bfdbfe;border-radius:17px;background:#eff6ff
+    }
+    .guide-item{display:flex;align-items:flex-start;gap:10px}
+    .guide-item i{color:var(--blue);margin-top:2px}
+    .guide-item strong{display:block;color:#1e3a8a;font-size:.82rem}
+    .guide-item span{display:block;margin-top:3px;color:#64748b;font-size:.74rem;line-height:1.4}
+    .footer-note{margin:26px 0 0;text-align:center;color:#64748b;font-size:.74rem}
+    @media(max-width:850px){.product-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:650px){
+      .header-inner,.page-shell{width:min(100% - 24px,560px)}
+      .header-inner{min-height:64px}.brand small{display:none}
+      .back-link{padding:8px 10px;font-size:.75rem}
+      .page-shell{padding:24px 0 40px}.hero{padding:23px 18px;border-radius:19px}
+      .toolbar{align-items:stretch;flex-direction:column}.toolbar select{flex-basis:auto}
+      .product-grid{grid-template-columns:1fr}.product-card{min-height:0}
+      .guide{grid-template-columns:1fr;padding:15px}
+    }
+    .szael-maintenance{
+      position:fixed;
+      inset:0;
+      z-index:200000;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      background:#0f172a;
+    }
+    .szael-maintenance.show{display:flex}
+    .szael-maintenance-box{
+      width:min(440px,100%);
+      box-sizing:border-box;
+      padding:28px 22px;
+      border-radius:20px;
+      background:#fff;
+      color:#111827;
+      text-align:center;
+      box-shadow:0 20px 60px rgba(0,0,0,.28);
+    }
+    .szael-maintenance-icon{
+      width:58px;height:58px;
+      margin:0 auto 15px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      background:#eff6ff;
+      color:#2563eb;
+      font-size:1.4rem;
+    }
+    .szael-maintenance-box h2{margin:0 0 8px;font-size:1.3rem}
+    .szael-maintenance-box p{margin:0;line-height:1.6;opacity:.72;font-size:.9rem}
+    body.szael-maintenance-active>.site-header,
+    body.szael-maintenance-active>.page-shell,
+    body.szael-maintenance-active>.page-loader{visibility:hidden}
+  </style>
+</head>
+<body>
+  <div class="page-loader" id="pageLoader" role="status" aria-label="Memuat halaman">
+    <div class="loader-content">
+      <div class="loader-spinner" aria-hidden="true"></div>
+      <div class="loader-label">Memuat halaman...</div>
+    </div>
+  </div>
+  <div aria-hidden="true" class="szael-maintenance" id="szaelMaintenance">
+    <div aria-labelledby="szaelMaintenanceTitle" aria-modal="true" class="szael-maintenance-box" role="dialog">
+      <div class="szael-maintenance-icon">
+        <i aria-hidden="true" class="fas fa-tools"></i>
+      </div>
+      <h2 id="szaelMaintenanceTitle">Maintenance</h2>
+      <p>Sementara untuk halaman nokos masih dalam tahap pengembangan, Mungkin akan tersedia di beberapa hari kedepan. Terima Kasih</p>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <span aria-hidden="true" class="brand-mark"><i class="fas fa-store"></i></span>
+        <span><strong>Szaell Store</strong><small>Nokos &amp; produk digital</small></span>
+      </a>
+      <a class="back-link" href="index.html">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Kembali ke Store
+      </a>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-content">
+        <div class="eyebrow"><i class="fas fa-sim-card" aria-hidden="true"></i> Katalog Nokos</div>
+        <h1 id="pageTitle">Pilih Nokos Indonesia &amp; Luar Negeri</h1>
+        <p>Cari nomor berdasarkan negara, masa aktif, dan ketersediaannya. Buka detail produk, lalu hubungi admin untuk konfirmasi stok sebelum melakukan pemesanan.</p>
+        <div class="notice">
+          <i class="fas fa-circle-info" aria-hidden="true"></i>
+          <span>Gunakan nomor hanya untuk kebutuhan yang sah dan sesuai ketentuan layanan terkait. Harga, stok, dan keterangan produk dapat berubah sewaktu-waktu.</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Filter katalog Nokos">
+      <div class="toolbar">
+        <label class="search-wrap">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input id="searchInput" type="search" placeholder="Cari negara atau nama produk..." autocomplete="off">
+        </label>
+        <label>
+          <span class="sr-only">Pilih negara</span>
+          <select id="countryFilter">
+            <option value="all">Semua negara</option>
+            <option value="indonesia">Indonesia</option>
+            <option value="malaysia">Malaysia</option>
+            <option value="singapore">Singapura</option>
+            <option value="usa">USA</option>
+            <option value="thailand">Thailand</option>
+          </select>
+        </label>
+      </div>
+      <p class="result-count" id="resultCount">Menampilkan 6 produk</p>
+    </section>
+
+    <section aria-label="Daftar produk Nokos">
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-country="indonesia" data-search="indonesia nokos indonesia basic lokal">
+          <div class="product-top"><div class="country-icon">🇮🇩</div><span class="stock available">Tersedia</span></div>
+          <h2>Nokos Indonesia Basic</h2>
+          <p class="country-name">Nomor Indonesia</p>
+          <ul class="spec-list">
+            <li><span>Masa aktif</span><strong>7 hari</strong></li>
+            <li><span>Dukungan SMS</span><strong>Sesuai keterangan</strong></li>
+            <li><span>Tipe</span><strong>Nomor virtual</strong></li>
+          </ul>
+          <div class="price-row"><span class="price">Rp10.000</span><span class="duration">per nomor</span></div>
+          <button class="order-btn" data-product="Nokos Indonesia Basic" data-country="Indonesia" data-duration="7 hari" data-price="Rp10.000" type="button"><i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Sekarang</button>
+        </article>
+
+        <article class="product-card" data-country="indonesia" data-search="indonesia nokos indonesia premium lokal">
+          <div class="product-top"><div class="country-icon">🇮🇩</div><span class="stock limited">Stok terbatas</span></div>
+          <h2>Nokos Indonesia Premium</h2>
+          <p class="country-name">Nomor Indonesia</p>
+          <ul class="spec-list">
+            <li><span>Masa aktif</span><strong>30 hari</strong></li>
+            <li><span>Dukungan SMS</span><strong>Sesuai keterangan</strong></li>
+            <li><span>Tipe</span><strong>Nomor virtual</strong></li>
+          </ul>
+          <div class="price-row"><span class="price">Rp25.000</span><span class="duration">per nomor</span></div>
+          <button class="order-btn" data-product="Nokos Indonesia Premium" data-country="Indonesia" data-duration="30 hari" data-price="Rp25.000" type="button"><i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Sekarang</button>
+        </article>
+
+        <article class="product-card" data-country="malaysia" data-search="malaysia nokos malaysia">
+          <div class="product-top"><div class="country-icon">🇲🇾</div><span class="stock available">Tersedia</span></div>
+          <h2>Nokos Malaysia</h2>
+          <p class="country-name">Nomor Malaysia</p>
+          <ul class="spec-list">
+            <li><span>Masa aktif</span><strong>7 hari</strong></li>
+            <li><span>Dukungan SMS</span><strong>Sesuai keterangan</strong></li>
+            <li><span>Tipe</span><strong>Nomor virtual</strong></li>
+          </ul>
+          <div class="price-row"><span class="price">Rp15.000</span><span class="duration">per nomor</span></div>
+          <button class="order-btn" data-product="Nokos Malaysia" data-country="Malaysia" data-duration="7 hari" data-price="Rp15.000" type="button"><i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Sekarang</button>
+        </article>
+
+        <article class="product-card" data-country="singapore" data-search="singapura singapore nokos">
+          <div class="product-top"><div class="country-icon">🇸🇬</div><span class="stock available">Tersedia</span></div>
+          <h2>Nokos Singapura</h2>
+          <p class="country-name">Nomor Singapura</p>
+          <ul class="spec-list">
+            <li><span>Masa aktif</span><strong>30 hari</strong></li>
+            <li><span>Dukungan SMS</span><strong>Sesuai keterangan</strong></li>
+            <li><span>Tipe</span><strong>Nomor virtual</strong></li>
+          </ul>
+          <div class="price-row"><span class="price">Rp30.000</span><span class="duration">per nomor</span></div>
+          <button class="order-btn" data-product="Nokos Singapura" data-country="Singapura" data-duration="30 hari" data-price="Rp30.000" type="button"><i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Sekarang</button>
+        </article>
+
+        <article class="product-card" data-country="usa" data-search="usa amerika united states nokos luar negeri">
+          <div class="product-top"><div class="country-icon">🇺🇸</div><span class="stock limited">Stok terbatas</span></div>
+          <h2>Nokos USA</h2>
+          <p class="country-name">Nomor Amerika Serikat</p>
+          <ul class="spec-list">
+            <li><span>Masa aktif</span><strong>7 hari</strong></li>
+            <li><span>Dukungan SMS</span><strong>Sesuai keterangan</strong></li>
+            <li><span>Tipe</span><strong>Nomor virtual</strong></li>
+          </ul>
+          <div class="price-row"><span class="price">Rp20.000</span><span class="duration">per nomor</span></div>
+          <button class="order-btn" data-product="Nokos USA" data-country="USA" data-duration="7 hari" data-price="Rp20.000" type="button"><i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Sekarang</button>
+        </article>
+
+        <article class="product-card" data-country="thailand" data-search="thailand thailand nokos luar negeri">
+          <div class="product-top"><div class="country-icon">🇹🇭</div><span class="stock empty">Habis sementara</span></div>
+          <h2>Nokos Thailand</h2>
+          <p class="country-name">Nomor Thailand</p>
+          <ul class="spec-list">
+            <li><span>Masa aktif</span><strong>7 hari</strong></li>
+            <li><span>Dukungan SMS</span><strong>Sesuai keterangan</strong></li>
+            <li><span>Tipe</span><strong>Nomor virtual</strong></li>
+          </ul>
+          <div class="price-row"><span class="price">Rp15.000</span><span class="duration">per nomor</span></div>
+          <button class="order-btn" disabled type="button"><i class="fas fa-bell" aria-hidden="true"></i> Tunggu Restock</button>
+        </article>
+      </div>
+      <div class="empty-state" id="emptyState"><i class="fas fa-search"></i>Tidak ada produk yang sesuai dengan pencarian.</div>
+    </section>
+
+    <section class="guide" aria-label="Panduan pemesanan Nokos">
+      <div class="guide-item"><i class="fas fa-filter" aria-hidden="true"></i><div><strong>1. Pilih negara</strong><span>Gunakan filter untuk menemukan nomor yang kamu cari.</span></div></div>
+      <div class="guide-item"><i class="fas fa-circle-info" aria-hidden="true"></i><div><strong>2. Cek detail</strong><span>Perhatikan masa aktif, status stok, dan keterangan produk.</span></div></div>
+      <div class="guide-item"><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>3. Konfirmasi admin</strong><span>Admin akan membantu mengecek ketersediaan sebelum order.</span></div></div>
+    </section>
+    <p class="footer-note">Harga dan ketersediaan dapat berubah. Konfirmasi detail produk kepada admin sebelum melakukan pembayaran.</p>
+  </main>
+
+  <script>
+    (function(){
+      const searchInput=document.getElementById('searchInput');
+      const countryFilter=document.getElementById('countryFilter');
+      const cards=[...document.querySelectorAll('.product-card')];
+      const resultCount=document.getElementById('resultCount');
+      const emptyState=document.getElementById('emptyState');
+
+      function filterProducts(){
+        const query=(searchInput.value||'').trim().toLowerCase();
+        const country=countryFilter.value;
+        let visible=0;
+        cards.forEach(function(card){
+          const matchesQuery=!query||(card.dataset.search||'').includes(query);
+          const matchesCountry=country==='all'||card.dataset.country===country;
+          const show=matchesQuery&&matchesCountry;
+          card.style.display=show?'flex':'none';
+          if(show) visible++;
+        });
+        resultCount.textContent='Menampilkan '+visible+' produk';
+        emptyState.style.display=visible?'none':'block';
+      }
+      searchInput.addEventListener('input',filterProducts);
+      countryFilter.addEventListener('change',filterProducts);
+      filterProducts();
+
+      document.querySelectorAll('.order-btn:not(:disabled)').forEach(function(button){
+        button.addEventListener('click',function(){
+          const now=new Date();
+          const minutes=now.getHours()*60+now.getMinutes();
+          const number=minutes>=480&&minutes<900?'6281394034310':minutes>=900&&minutes<1380?'6287888870173':'';
+          if(!number){
+            alert('Admin sedang offline. Jam operasional 08.00 - 23.00 WIB.');
+            return;
+          }
+          const message='Halo Admin Szaell Store 👋\\n\\nSaya ingin memesan Nokos:\\n'+
+            '• Produk: '+button.dataset.product+'\\n'+
+            '• Negara: '+button.dataset.country+'\\n'+
+            '• Masa aktif: '+button.dataset.duration+'\\n'+
+            '• Harga: '+button.dataset.price+'\\n\\n'+
+            'Mohon konfirmasi ketersediaan dan detail penggunaannya. Terima kasih 🙏';
+          window.open('https://wa.me/'+number+'?text='+encodeURIComponent(message),'_blank','noopener');
+        });
+      });
+    })();
+  </script>
+  <script id="szael-maintenance-mode">
+    (function(){
+      /* Ubah false menjadi true untuk mengaktifkan maintenance di halaman Nokos. */
+      window.SZAEL_MAINTENANCE_MODE = true;
+      const maintenance=document.getElementById('szaelMaintenance');
+      if(window.SZAEL_MAINTENANCE_MODE&&maintenance){
+        document.body.classList.add('szael-maintenance-active');
+        maintenance.classList.add('show');
+        maintenance.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
+      }
+    })();
+  </script>
+  <script id="page-transition-loader">
+    (function(){
+      const loader=document.getElementById('pageLoader');
+      if(!loader)return;
+      let navigating=false;
+      function hideLoader(){
+        loader.classList.add('is-hidden');
+        loader.setAttribute('aria-hidden','true');
+      }
+      function showLoader(){
+        loader.classList.remove('is-hidden');
+        loader.setAttribute('aria-hidden','false');
+      }
+      document.addEventListener('click',function(event){
+        const link=event.target.closest('a[href]');
+        if(!link||navigating||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+        if((link.target&&link.target!=='_self')||link.hasAttribute('download'))return;
+        let destination;
+        try{destination=new URL(link.href,window.location.href)}catch(error){return}
+        if(destination.origin!==window.location.origin)return;
+        if(destination.pathname===window.location.pathname&&destination.search===window.location.search)return;
+        event.preventDefault();
+        navigating=true;
+        showLoader();
+        window.setTimeout(function(){window.location.assign(destination.href)},220);
+      },true);
+      window.addEventListener('pageshow',function(event){
+        if(event.persisted){navigating=false;hideLoader()}
+      });
+      window.setTimeout(hideLoader,650);
+    })();
+  </script>
+</body>
+</html>

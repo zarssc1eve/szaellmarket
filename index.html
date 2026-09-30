@@ -1219,6 +1219,30 @@ body.dark-mode header { background:linear-gradient(90deg,#111827 0%,#1f2937 100%
 body.dark-mode nav { background:linear-gradient(180deg,#111827 0%,#1f2937 100%)!important; }
 body.dark-mode .theme-toggle-nav { border-color:rgba(255,255,255,.18); background:rgba(255,255,255,.08); }
 body.dark-mode { scroll-behavior:smooth; }
+
+/* =========================================================
+   #11 - MOVING GRADIENT BACKGROUND
+   ========================================================= */
+body{
+  background:linear-gradient(120deg,#ebf4ff,#e0e7ff,#eef2ff,#dbeafe,#ede9fe,#ebf4ff)!important;
+  background-size:500% 500%!important;
+  animation:szaelGradientMove 16s ease infinite;
+}
+@keyframes szaelGradientMove{
+  0%{background-position:0% 50%}
+  25%{background-position:50% 100%}
+  50%{background-position:100% 50%}
+  75%{background-position:50% 0%}
+  100%{background-position:0% 50%}
+}
+body.dark-mode{
+  background:linear-gradient(120deg,#111827,#172554,#1f2937,#111827,#1e1b4b,#111827)!important;
+  background-size:500% 500%!important;
+  animation:szaelGradientMove 18s ease infinite;
+}
+@media(prefers-reduced-motion:reduce){
+  body{animation:none!important;}
+}
 </style>
 <style>
 /* =========================================================
@@ -1407,14 +1431,61 @@ body.dark-mode .szael-popular-card,body.dark-mode .szael-order-summary-box{backg
 /* =========================================================
    FITUR TAMBAHAN SZAE L STORE - MUDAH DIEDIT
    ========================================================= */
-.store-status-box,.cara-order-box,.faq-box{max-width:1200px;margin:18px auto;padding:16px 20px;border-radius:16px;box-sizing:border-box}
+ .store-status-box,.cara-order-box,.bundling-box,.faq-box{max-width:1200px;margin:18px auto;padding:16px 20px;border-radius:16px;box-sizing:border-box}
 .store-status-box{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2)}
 .store-status-online{color:#15803d;font-weight:800}.store-status-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#22c55e;margin-right:7px;box-shadow:0 0 0 5px rgba(34,197,94,.12)}
 .cara-order-box{background:#fff;border:1px solid #e5e7eb;box-shadow:0 8px 24px rgba(0,0,0,.06)}
 .cara-order-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}.cara-order-item{text-align:center;padding:14px;border-radius:12px;background:#f8fafc}.cara-order-item i{font-size:1.25rem;margin-bottom:7px}.cara-order-item strong{display:block}.cara-order-item small{color:#64748b}
-body.dark-mode .cara-order-box,body.dark-mode .faq-box{background:#1f2937;border-color:#374151;color:#f9fafb}.dark-mode .cara-order-item{background:#111827}.dark-mode .faq-item{border-color:#374151}.dark-mode .faq-answer{color:#d1d5db}
+ .bundling-box{background:linear-gradient(135deg,#eff6ff 0%,#f5f3ff 100%);border:1px solid #c7d2fe;box-shadow:0 10px 28px rgba(37,99,235,.08)}
+ .bundling-heading{text-align:center;margin:0;color:#1d4ed8}
+ .bundling-subtitle{text-align:center;margin:5px auto 0;color:#64748b;font-size:.9rem}
+ .bundling-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+ .bundle-card{position:relative;display:flex;flex-direction:column;padding:18px!important;border:1px solid rgba(99,102,241,.18)!important;border-radius:17px!important;background:rgba(255,255,255,.88)!important;color:#1f2937!important;box-shadow:0 7px 20px rgba(30,64,175,.08)!important}
+ .bundle-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;border-radius:17px 17px 0 0;background:linear-gradient(90deg,#2563eb,#7c3aed)}
+ .bundle-icon{width:46px;height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:11px;border-radius:13px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;font-size:1.2rem;box-shadow:0 7px 15px rgba(37,99,235,.2)}
+ .bundle-card h4{margin:0;color:#1e3a8a;font-size:1.08rem}
+ .bundle-card .bundle-description{margin:5px 0 13px;color:#64748b;font-size:.84rem;line-height:1.45}
+ .bundle-features{display:grid;gap:7px;margin:0 0 16px;padding:0;list-style:none}
+ .bundle-features li{display:flex;align-items:center;gap:7px;color:#475569;font-size:.82rem}
+ .bundle-features li i{color:#2563eb;font-size:.75rem}
+ .bundle-card .app-package-duration{margin:0 0 4px;color:#64748b;font-size:.78rem}
+ .bundle-card .app-package-price{margin:0 0 15px;color:#1d4ed8;font-size:1.05rem;font-weight:900}
+ .bundle-card .app-package-buy{width:100%;margin-top:auto;padding:10px 12px;border-radius:11px;background:#2563eb;color:#fff;font-size:.84rem;font-weight:800;text-align:center;transition:.2s ease}
+ .bundle-card .app-package-buy:hover{background:#1d4ed8;transform:translateY(-1px)}
+ .bundle-badge{position:absolute;top:14px;right:14px;padding:4px 8px;border-radius:999px;background:#f97316;color:#fff;font-size:.65rem;font-weight:900}
+ .nokos-promo-box{max-width:1200px;margin:18px auto;padding:20px;border-radius:18px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;box-shadow:0 12px 30px rgba(15,23,42,.16);position:relative;overflow:hidden}
+ .nokos-promo-box::after{content:"";position:absolute;width:210px;height:210px;right:-70px;top:-95px;border-radius:50%;background:rgba(96,165,250,.18)}
+ .nokos-promo-content{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:18px}
+ .nokos-promo-copy{display:flex;align-items:center;gap:14px}
+ .nokos-promo-icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;border-radius:15px;background:rgba(255,255,255,.14);color:#bfdbfe;font-size:1.35rem}
+ .nokos-promo-copy h2{margin:0 0 4px;font-size:1.18rem}
+ .nokos-promo-copy p{margin:0;color:#dbeafe;font-size:.88rem;line-height:1.45}
+ .nokos-promo-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:0 0 auto;padding:11px 15px;border-radius:11px;background:#fff;color:#1d4ed8;font-size:.84rem;font-weight:900;text-decoration:none;transition:.2s ease}
+ .nokos-promo-btn:hover{transform:translateY(-2px);background:#dbeafe}
+ .faq-box{background:#fff;border:1px solid #e5e7eb;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+ .faq-box h2{text-align:center;margin:0;color:#2563eb}
+ .faq-list{display:grid;gap:10px;max-width:860px;margin:18px auto 0}
+ .faq-item{overflow:hidden;border:1px solid #e5e7eb;border-radius:13px;background:#f8fafc;transition:border-color .2s ease,box-shadow .2s ease}
+ .faq-item[open]{border-color:#93c5fd;box-shadow:0 6px 18px rgba(37,99,235,.08)}
+ .faq-question{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 17px;color:#1e3a8a;font-weight:800;cursor:pointer;list-style:none}
+ .faq-question::-webkit-details-marker{display:none}
+ .faq-question::after{content:"\f078";flex:0 0 auto;color:#2563eb;font-family:"Font Awesome 6 Free";font-size:.78rem;font-weight:900;transition:transform .2s ease}
+ .faq-item[open] .faq-question::after{transform:rotate(180deg)}
+ .faq-answer{margin:0;padding:0 17px 16px;color:#64748b;line-height:1.55;font-size:.92rem}
+ body.dark-mode .cara-order-box,body.dark-mode .bundling-box,body.dark-mode .faq-box{background:#1f2937;border-color:#374151;color:#f9fafb}.dark-mode .cara-order-item{background:#111827}.dark-mode .faq-item{border-color:#374151}.dark-mode .faq-answer{color:#d1d5db}
+ body.dark-mode .bundling-subtitle{color:#9ca3af}
+ body.dark-mode .bundle-card{background:#111827!important;border-color:#374151!important;color:#f9fafb!important}
+ body.dark-mode .bundle-card h4{color:#bfdbfe}
+ body.dark-mode .bundle-card .bundle-description,body.dark-mode .bundle-features li,body.dark-mode .bundle-card .app-package-duration{color:#cbd5e1}
+ body.dark-mode .nokos-promo-box{background:linear-gradient(135deg,#020617 0%,#172554 100%)}
+ body.dark-mode .faq-item{background:#111827}
+ body.dark-mode .faq-item[open]{border-color:#60a5fa}
+ body.dark-mode .faq-question{color:#bfdbfe}
 @media(max-width:700px){.store-status-box{align-items:flex-start;flex-direction:column}.cara-order-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:430px){.cara-order-grid{grid-template-columns:1fr}}
+ @media(max-width:800px){.bundling-grid{grid-template-columns:1fr 1fr}}
+ @media(max-width:700px){.nokos-promo-content{align-items:flex-start;flex-direction:column}.nokos-promo-btn{width:100%}}
+ @media(max-width:600px){.bundling-box,.faq-box,.nokos-promo-box{margin-left:12px;margin-right:12px;padding:15px 12px}.bundling-grid{grid-template-columns:1fr;gap:11px}.bundle-card{padding:16px!important}.faq-question{padding:14px 13px;font-size:.9rem}.faq-answer{padding:0 13px 14px;font-size:.86rem}}
 </style>
 <style id="szael-info-popup-css">
 /* =========================================================
@@ -1760,8 +1831,318 @@ body.szael-maintenance-active #infoPopupModal{display:none!important}
 
 </style>
 <style id="szael-cart-css">.szael-cart-fab{position:fixed;left:18px;bottom:18px;z-index:9991;width:56px;height:56px;border:0;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 10px 25px rgba(0,0,0,.22);cursor:pointer;transition:.2s}.szael-cart-fab:hover{transform:translateY(-3px) scale(1.04)}.szael-cart-count{position:absolute;top:-4px;right:-3px;min-width:21px;height:21px;padding:0 5px;border-radius:999px;background:#ef4444;color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff}.szael-cart-add{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-height:40px;margin-top:9px;padding:8px 10px;border:1px solid #2563eb;border-radius:10px;background:#fff;color:#2563eb;font-weight:800;cursor:pointer;transition:.2s}.szael-cart-add:hover{background:#eff6ff;transform:translateY(-1px)}.szael-cart-modal{position:fixed;inset:0;z-index:100004;display:flex;align-items:flex-end;justify-content:center;padding:16px;background:rgba(0,0,0,.68);backdrop-filter:blur(6px);opacity:0;visibility:hidden;pointer-events:none;transition:.22s}.szael-cart-modal.show{opacity:1;visibility:visible;pointer-events:auto}.szael-cart-box{width:min(520px,100%);max-height:85vh;overflow-y:auto;background:#fff;color:#111827;border-radius:22px;padding:20px;box-shadow:0 25px 70px rgba(0,0,0,.35);transform:translateY(25px);transition:.22s}.szael-cart-modal.show .szael-cart-box{transform:none}.szael-cart-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.szael-cart-head h2{margin:0;color:#2563eb;font-size:1.3rem}.szael-cart-close{width:38px;height:38px;border:0;border-radius:50%;background:#eef2f7;color:#475569;cursor:pointer;font-size:1rem}.szael-cart-empty{text-align:center;padding:28px 10px;color:#64748b}.szael-cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:13px 0;border-bottom:1px solid #e5e7eb}.szael-cart-item strong{display:block;font-size:.94rem}.szael-cart-item small{display:block;color:#64748b;margin-top:3px}.szael-cart-controls{display:flex;align-items:center;gap:7px}.szael-cart-qty{min-width:24px;text-align:center;font-weight:800}.szael-cart-qty-btn{width:29px;height:29px;border:0;border-radius:8px;background:#eef2f7;color:#374151;font-weight:900;cursor:pointer}.szael-cart-remove{border:0;background:none;color:#ef4444;font-size:.78rem;cursor:pointer;margin-left:3px}.szael-cart-total{display:flex;justify-content:space-between;gap:10px;margin-top:16px;padding-top:12px;font-size:1rem;font-weight:800}.szael-cart-checkout{width:100%;min-height:46px;margin-top:14px;border:0;border-radius:12px;background:#25d366;color:#fff;font-weight:900;cursor:pointer;font-size:.95rem}.szael-cart-checkout:disabled{opacity:.5;cursor:not-allowed}body.dark-mode .szael-cart-box{background:#1f2937;color:#f9fafb}body.dark-mode .szael-cart-item{border-color:#374151}body.dark-mode .szael-cart-item small{color:#9ca3af}body.dark-mode .szael-cart-qty-btn,body.dark-mode .szael-cart-close{background:#374151;color:#f9fafb}@media(max-width:600px){.szael-cart-fab{left:14px;bottom:14px}.szael-cart-box{padding:17px;border-radius:19px}.szael-cart-modal{padding:10px}}</style>
+
+<style id="szael-slider-fix-css">
+/* Perbaikan slider List Aplikasi Premium - hanya override slider */
+#szaelAppSlider{
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  scroll-behavior:smooth !important;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain;
+}
+#szaelAppSlider .menu-card{
+  flex-shrink:0 !important;
+}
+</style>
+
+
+<style id="szael-pilihan-paket-2kolom">
+/* PILIHAN PAKET — 2 kolom, tanpa slider */
+#paket .paket-slider-wrap{
+  width:min(1200px,calc(100% - 24px));
+  margin:0 auto;
+}
+#paket .paket-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:16px !important;
+  width:100% !important;
+  max-width:1200px !important;
+  margin:0 auto !important;
+  padding:4px 2px 12px !important;
+  overflow:visible !important;
+  box-sizing:border-box !important;
+}
+#paket .paket-grid .app-choice-card{
+  width:100% !important;
+  min-width:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:16px !important;
+  box-sizing:border-box !important;
+  border-radius:18px !important;
+  background:rgba(255,255,255,.96) !important;
+  border:1px solid rgba(148,163,184,.22) !important;
+  box-shadow:0 7px 22px rgba(15,23,42,.07) !important;
+  overflow:hidden !important;
+}
+#paket .paket-grid .app-choice-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 13px 28px rgba(37,99,235,.12) !important;
+}
+#paket .paket-grid .app-choice-card .card-header{
+  text-align:center !important;
+  margin-bottom:8px !important;
+}
+#paket .paket-grid .app-choice-card .card-header img{
+  width:58px !important;
+  height:58px !important;
+  object-fit:cover !important;
+  margin:0 auto 8px !important;
+  border-radius:14px !important;
+}
+#paket .paket-grid .app-choice-card h3{
+  font-size:1rem !important;
+  line-height:1.25 !important;
+  margin:0 !important;
+}
+#paket .paket-grid .app-choice-card .szael-product-badge{
+  margin:5px 3px 0 !important;
+  font-size:.62rem !important;
+  padding:4px 7px !important;
+}
+#paket .paket-grid .app-choice-card .duration{
+  margin:6px 0 0 !important;
+  font-size:.76rem !important;
+  line-height:1.3 !important;
+}
+#paket .paket-grid .app-choice-card .price{
+  margin:7px 0 0 !important;
+  font-size:1rem !important;
+  line-height:1.2 !important;
+}
+#paket .paket-grid .app-choice-card .szael-price-old{
+  font-size:.72rem !important;
+}
+#paket .paket-grid .app-choice-card .szael-price-new{
+  font-size:.98rem !important;
+}
+#paket .paket-grid .app-choice-card .description{
+  margin:7px 0 0 !important;
+  font-size:.73rem !important;
+  line-height:1.35 !important;
+}
+#paket .paket-grid .app-choice-card .benefits{
+  margin:7px 0 0 !important;
+  max-height:62px !important;
+  overflow:auto !important;
+}
+#paket .paket-grid .app-choice-card .benefits li{
+  gap:5px !important;
+  margin-bottom:3px !important;
+  font-size:.7rem !important;
+  line-height:1.25 !important;
+}
+#paket .paket-grid .app-choice-card .benefits li i{
+  font-size:.7rem !important;
+}
+#paket .paket-grid .app-choice-card .btn-order{
+  width:100% !important;
+  margin:9px 0 0 !important;
+  padding:8px 9px !important;
+  border-radius:10px !important;
+  font-size:.78rem !important;
+}
+
+/* Pastikan tombol/dot slider utama benar-benar hilang */
+#paket .szael-main-package-controls,
+#paket .szael-main-package-btn,
+#paket .szael-main-package-dots{
+  display:none !important;
+}
+
+body.dark-mode #paket .paket-grid .app-choice-card{
+  background:#1f2937 !important;
+  border-color:#374151 !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.22) !important;
+}
+
+@media(max-width:600px){
+  #paket .paket-slider-wrap{
+    width:calc(100% - 18px);
+  }
+  #paket .paket-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:10px !important;
+    padding-left:1px !important;
+    padding-right:1px !important;
+  }
+  #paket .paket-grid .app-choice-card{
+    padding:11px !important;
+    border-radius:15px !important;
+  }
+  #paket .paket-grid .app-choice-card .card-header img{
+    width:48px !important;
+    height:48px !important;
+    border-radius:12px !important;
+  }
+  #paket .paket-grid .app-choice-card h3{
+    font-size:.82rem !important;
+    line-height:1.3 !important;
+    margin-bottom:6px !important;
+    overflow-wrap:anywhere !important;
+  }
+  /* Badge dipisahkan dari nama aplikasi agar tidak bertabrakan di HP */
+  #paket .paket-grid .app-choice-card .szael-product-badge{
+    display:block !important;
+    width:max-content !important;
+    max-width:100% !important;
+    margin:4px auto 0 !important;
+    position:static !important;
+    transform:none !important;
+    white-space:nowrap !important;
+  }
+  #paket .paket-grid .app-choice-card .duration{
+    font-size:.66rem !important;
+  }
+  #paket .paket-grid .app-choice-card .price{
+    font-size:.85rem !important;
+  }
+  #paket .paket-grid .app-choice-card .szael-price-new{
+    font-size:.84rem !important;
+  }
+  #paket .paket-grid .app-choice-card .description{
+    font-size:.64rem !important;
+  }
+  #paket .paket-grid .app-choice-card .benefits{
+    max-height:48px !important;
+  }
+  #paket .paket-grid .app-choice-card .benefits li{
+    font-size:.61rem !important;
+  }
+  #paket .paket-grid .app-choice-card .btn-order{
+    font-size:.68rem !important;
+    padding:7px 5px !important;
+  }
+}
+</style>
+
+
+<style id="szael-package-card-final-mobile">
+#paket .paket-grid .app-choice-card .card-header{display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:flex-start !important;text-align:center !important;margin:0 !important;}
+#paket .paket-grid .app-choice-card .card-header img{display:block !important;margin:0 auto 9px !important;flex:0 0 auto !important;}
+#paket .paket-grid .app-choice-card .card-header h3{order:2 !important;width:100% !important;margin:0 0 7px !important;text-align:center !important;line-height:1.25 !important;}
+#paket .paket-grid .app-choice-card .card-header .szael-product-badge{order:3 !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;margin:0 3px 0 !important;position:static !important;vertical-align:middle !important;}
+#paket .paket-grid .app-choice-card .card-header .duration{display:none !important;}
+#paket .paket-grid .app-choice-card .price{display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:center !important;gap:2px !important;width:100% !important;margin:12px 0 0 !important;text-align:center !important;}
+#paket .paket-grid .app-choice-card .szael-price-old,#paket .paket-grid .app-choice-card .szael-price-new{display:block !important;text-align:center !important;}
+@media(max-width:600px){
+ #paket .paket-grid .app-choice-card .card-header img{width:50px !important;height:50px !important;margin-bottom:8px !important;}
+ #paket .paket-grid .app-choice-card h3{font-size:.84rem !important;margin-bottom:6px !important;}
+ #paket .paket-grid .app-choice-card .szael-product-badge{font-size:.58rem !important;padding:4px 7px !important;line-height:1 !important;margin:0 2px !important;}
+ #paket .paket-grid .app-choice-card .price{margin-top:11px !important;}
+}
+</style>
+
+<style id="szael-package-buttons-aligned">
+/* Samakan tinggi card dan posisikan semua tombol Paket Lainnya di bawah */
+#paket .paket-grid .app-choice-card{
+  display:flex !important;
+  flex-direction:column !important;
+  height:100% !important;
+  box-sizing:border-box !important;
+}
+#paket .paket-grid .app-choice-card .card-header{
+  flex-shrink:0 !important;
+}
+#paket .paket-grid .app-choice-card .price{
+  flex-shrink:0 !important;
+}
+#paket .paket-grid .app-choice-card .description{
+  flex-shrink:0 !important;
+}
+#paket .paket-grid .app-choice-card .benefits{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+}
+#paket .paket-grid .app-choice-card .btn-order{
+  margin-top:auto !important;
+  flex-shrink:0 !important;
+  align-self:center !important;
+}
+</style>
+
+
+<style id="szael-package-price-aligned">
+/* Samakan posisi harga walaupun ada/tidak ada harga coret */
+#paket .paket-grid .app-choice-card .price{
+  min-height:2.6em !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  line-height:1.2 !important;
+  margin-top:11px !important;
+}
+#paket .paket-grid .app-choice-card .szael-price-old{
+  min-height:1em !important;
+  visibility:hidden !important;
+}
+#paket .paket-grid .app-choice-card .szael-price-old:not(:empty){
+  visibility:visible !important;
+}
+</style>
+
+
+<style id="szael-modal-description-style">
+.szael-modal-description{
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:10px !important;
+  margin:12px 0 16px !important;
+  padding:12px 14px !important;
+  text-align:left !important;
+  color:rgba(255,255,255,.86) !important;
+  font-size:.84rem !important;
+  line-height:1.5 !important;
+  background:linear-gradient(135deg,rgba(37,99,235,.18),rgba(124,58,237,.14)) !important;
+  border:1px solid rgba(147,197,253,.28) !important;
+  border-radius:14px !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 8px 20px rgba(0,0,0,.12) !important;
+}
+.szael-modal-description::before{
+  content:"\f05a";
+  flex:0 0 auto;
+  margin-top:1px;
+  color:#93c5fd;
+  font-family:"Font Awesome 6 Free";
+  font-size:1rem;
+  font-weight:900;
+}
+body.dark-mode .szael-modal-description{
+  color:#e2e8f0 !important;
+  border-color:rgba(96,165,250,.3) !important;
+}
+@media (max-width:700px){
+  .szael-modal-description{
+    margin:10px 0 14px !important;
+    padding:11px 12px !important;
+    font-size:.8rem !important;
+  }
+}
+</style>
+<style id="szael-skeleton-loading-critical-css">
+.szael-skeleton-loader{position:fixed;inset:0;z-index:100010;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(255,255,255,.92);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);opacity:1;visibility:visible;transition:opacity .3s ease,visibility .3s ease}
+.szael-skeleton-loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.szael-skeleton-box{display:flex;flex-direction:column;align-items:center;gap:14px}
+.szael-skeleton-spinner{width:52px;height:52px;border:5px solid #dbeafe;border-top-color:#2563eb;border-radius:50%;animation:szaelSpinnerRotate .8s linear infinite}
+.szael-skeleton-label{color:#1e3a8a;font:600 14px/1.4 Arial,sans-serif}
+@keyframes szaelSpinnerRotate{to{transform:rotate(360deg)}}
+body.dark-mode .szael-skeleton-loader{background:rgba(17,24,39,.94)}
+body.dark-mode .szael-skeleton-spinner{border-color:#374151;border-top-color:#60a5fa}
+body.dark-mode .szael-skeleton-label{color:#e2e8f0}
+@media(prefers-reduced-motion:reduce){.szael-skeleton-spinner{animation-duration:2s}}
+</style>
 </head>
 <body>
+<div class="szael-skeleton-loader" id="szaelSkeletonLoader" aria-label="Memuat halaman" role="status" aria-hidden="false">
+  <div class="szael-skeleton-box">
+    <div class="szael-skeleton-spinner" aria-hidden="true"></div>
+    <div class="szael-skeleton-label">Memuat halaman...</div>
+  </div>
+</div>
 <!-- NAVBAR MENU - KEMBALI KE NAVBAR SEBELUM SIDEBAR -->
 <header>
 <div class="container">
@@ -2070,7 +2451,8 @@ body.szael-maintenance-active #infoPopupModal{display:none!important}
 </section>
 <section aria-label="Paket Harga aplikasi Premium" id="paket">
 <h2>Pilihan <span>Paket</span></h2>
-<div class="paket-grid">
+<div class="paket-slider-wrap">
+<div class="paket-grid" id="szaelMainPackageSlider">
 <!-- =========================================================
            ALIGHT MOTION - TOMBOL PEMILIHAN PAKET
            EDIT MUDAH: cari "ALIGHT MOTION - MODAL" di bawah file.
@@ -2289,6 +2671,70 @@ body.szael-maintenance-active #infoPopupModal{display:none!important}
 <button class="btn-order app-open-btn" data-modal-target="chatgptModal" type="button">Paket Lainnya</button>
 </article>
 </div>
+<button type="button" class="szael-main-package-btn" id="szaelMainPackageNext" aria-label="Paket berikutnya"><i class="fas fa-chevron-right"></i></button>
+</div>
+</section>
+<!-- NOKOS -->
+<section aria-labelledby="nokosPromoTitle" class="nokos-promo-box">
+<div class="nokos-promo-content">
+<div class="nokos-promo-copy">
+<div aria-hidden="true" class="nokos-promo-icon"><i class="fas fa-mobile-screen-button"></i></div>
+<div>
+<h2 id="nokosPromoTitle">Nokos Indonesia &amp; Luar Negeri</h2>
+<p>Pilih nomor sesuai negara, cek detail masa aktif dan ketersediaannya di halaman khusus Nokos.</p>
+</div>
+</div>
+<a class="nokos-promo-btn" href="nokos.html"><i aria-hidden="true" class="fas fa-arrow-right"></i> Lihat Pilihan Nokos</a>
+</div>
+</section>
+<!-- PAKET BUNDLING -->
+<section aria-labelledby="bundlingTitle" class="bundling-box">
+<h2 class="bundling-heading" id="bundlingTitle">Paket Bundling</h2>
+<p class="bundling-subtitle">Gabungkan beberapa aplikasi favorit dalam satu paket yang lebih praktis.</p>
+<div class="bundling-grid">
+<article class="app-package-item bundle-card">
+<span class="bundle-badge">HEMAT</span>
+<div class="bundle-icon"><i aria-hidden="true" class="fas fa-palette"></i></div>
+<h4>Paket Kreator</h4>
+<p class="bundle-description">Cocok untuk membuat konten, mengedit video, dan mendesain visual.</p>
+<ul class="bundle-features">
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>Canva Premium</li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>CapCut Premium</li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>Alight Motion Premium</li>
+</ul>
+<p class="app-package-duration">3 aplikasi • Paket hemat</p>
+<p class="app-package-price">Mulai Rp18.000</p>
+<a class="btn-order app-package-buy" href="#kontak">Pilih Paket Ini</a>
+</article>
+<article class="app-package-item bundle-card">
+<span class="bundle-badge">POPULER</span>
+<div class="bundle-icon"><i aria-hidden="true" class="fas fa-film"></i></div>
+<h4>Paket Hiburan</h4>
+<p class="bundle-description">Pilihan untuk menikmati film, video, dan musik premium.</p>
+<ul class="bundle-features">
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>Netflix Premium</li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>YouTube Premium</li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>Spotify Premium</li>
+</ul>
+<p class="app-package-duration">3 aplikasi • Pilihan favorit</p>
+<p class="app-package-price">Mulai Rp105.000</p>
+<a class="btn-order app-package-buy" href="#kontak">Pilih Paket Ini</a>
+</article>
+<article class="app-package-item bundle-card">
+<span class="bundle-badge">PRODUKTIF</span>
+<div class="bundle-icon"><i aria-hidden="true" class="fas fa-bolt"></i></div>
+<h4>Paket Produktif</h4>
+<p class="bundle-description">Bantu menyelesaikan pekerjaan dan membuat materi dengan lebih cepat.</p>
+<ul class="bundle-features">
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>ChatGPT Premium</li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>Canva Premium</li>
+<li><i aria-hidden="true" class="fas fa-check-circle"></i>Alight Motion Premium</li>
+</ul>
+<p class="app-package-duration">3 aplikasi • Paket lengkap</p>
+<p class="app-package-price">Mulai Rp50.000</p>
+<a class="btn-order app-package-buy" href="#kontak">Pilih Paket Ini</a>
+</article>
+</div>
 </section>
 <!-- CARA ORDER -->
 <div class="cara-order-box">
@@ -2300,60 +2746,29 @@ body.szael-maintenance-active #infoPopupModal{display:none!important}
 <div class="cara-order-item"><i class="fas fa-check-circle"></i><strong>4. Selesaikan Pesanan</strong><small>Ikuti instruksi dari admin.</small></div>
 </div>
 </div>
-<section aria-label="Testimonial Pengguna" class="testimonial-section">
-<h2>Apa Kata <span>Mereka?</span></h2>
-<div class="testimonial-grid">
-<article class="testimonial-card" tabindex="0">
-<div class="testimonial-header">
-<img height="50" src="https://files.catbox.moe/4ewx6u.jpg" width="50"/>
-<div>
-<h4>Szaell</h4>
-<p>Owner Store</p>
-</div>
-</div>
-<p class="testimonial-text">"Store ini sangat bagus dnegan menyediakan beberapa aplikasi premium dengan harga yang bisa dibilang murah."</p>
-<div aria-label="Rating 5 bintang" class="testimonial-stars">
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-</div>
-</article>
-<article class="testimonial-card" tabindex="0">
-<div class="testimonial-header">
-<img height="50" src="https://files.catbox.moe/pua20t.jpg" width="50"/>
-<div>
-<h4>Zarss</h4>
-<p>Admin Store</p>
-</div>
-</div>
-<p class="testimonial-text">"Tim support nya ramah dan selalu siap membantu 24/7 ketika ada kendala dan lain sebagai nya."</p>
-<div aria-label="Rating 4.5 bintang" class="testimonial-stars">
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star-half-alt"></i>
-</div>
-</article>
-<article class="testimonial-card" tabindex="0">
-<div class="testimonial-header">
-<img height="50" src="https://files.catbox.moe/it3fgr.jpg" width="50"/>
-<div>
-<h4>zamm</h4>
-<p>Admin Store</p>
-</div>
-</div>
-<p class="testimonial-text">"gausah ragu udah pasti amanah, kirain awalnya bakal nipu atau apa apa ehh ternyata top markotopp"</p>
-<div aria-label="Rating 5 bintang" class="testimonial-stars">
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-<i aria-hidden="true" class="fas fa-star"></i>
-</div>
-</article>
+<section aria-labelledby="faqTitle" class="faq-box">
+<h2 id="faqTitle">FAQ</h2>
+<div class="faq-list">
+<details class="faq-item" open>
+<summary class="faq-question">Bagaimana cara melakukan pemesanan?</summary>
+<p class="faq-answer">Pilih aplikasi dan paket yang kamu inginkan, klik tombol “Paket Lainnya”, lalu pilih “Pesan Sekarang”. Setelah itu, ikuti instruksi pemesanan melalui WhatsApp.</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question">Apa perbedaan paket Private dan Sharing?</summary>
+<p class="faq-answer">Paket Private digunakan secara lebih personal, sedangkan paket Sharing digunakan bersama pengguna lain. Detail penggunaan setiap paket dapat dilihat pada pilihan paket sebelum melakukan pemesanan.</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question">Berapa lama proses pesanan?</summary>
+<p class="faq-answer">Pesanan diproses setelah detail dan pembayaran dikonfirmasi oleh admin. Waktu pengiriman dapat berbeda tergantung aplikasi dan ketersediaan paket.</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question">Bagaimana jika mengalami kendala setelah menerima akun?</summary>
+<p class="faq-answer">Segera hubungi admin melalui kontak yang tersedia dan sertakan detail pesanan serta kendala yang dialami agar dapat dibantu sesuai ketentuan paket.</p>
+</details>
+<details class="faq-item">
+<summary class="faq-question">Apakah semua aplikasi memiliki pilihan durasi yang sama?</summary>
+<p class="faq-answer">Tidak. Setiap aplikasi memiliki pilihan paket dan durasi yang berbeda. Kamu bisa membuka tombol “Paket Lainnya” untuk melihat detail yang tersedia.</p>
+</details>
 </div>
 </section>
 <section aria-label="Kontak dan Call to Action" id="kontak">
@@ -2458,7 +2873,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
   filterCards();
 
   // Animasi muncul saat scroll.
-  const revealTargets=document.querySelectorAll('.menu-card,.card,.feature-card,.testimonial-card');
+  const revealTargets=document.querySelectorAll('.menu-card,.card,.feature-card,.faq-item');
   revealTargets.forEach(el=>el.classList.add('scroll-reveal'));
   if('IntersectionObserver' in window){
     const observer=new IntersectionObserver(entries=>{
@@ -2468,7 +2883,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
   } else revealTargets.forEach(el=>el.classList.add('is-visible'));
 
   // Checkout WhatsApp dari semua tombol paket: pesan dibuat otomatis dari nama paket.
-  const WA_NUMBER='6281234567890';
+  const WA_NUMBER='6281334567890';
   document.addEventListener('click',function(e){
     const btn=e.target.closest('.app-package-buy, .netflix-package-buy');
     if(!btn) return;
@@ -2486,9 +2901,9 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <!-- =========================================================
      FLOATING WHATSAPP + BACK TO TOP
      ========================================================= -->
-<a aria-label="Chat WhatsApp" class="floating-wa" href="https://wa.me/6281234567890?text=Halo%20Szael%20Store%2C%20saya%20ingin%20bertanya%20tentang%20paket%20premium." rel="noopener" target="_blank">
+<a aria-label="Chat WhatsApp" class="floating-wa" href="https://whatsapp.com/channel/0029VbDjMBt42Dcgmb4exh0c" rel="noopener" target="_blank">
 <i aria-hidden="true" class="fab fa-whatsapp"></i>
-<span class="wa-label">Chat WhatsApp</span>
+<span class="wa-label">Channel WhatsApp</span>
 </a>
 <button aria-label="Kembali ke atas" class="back-top" id="backTop" type="button">
 <i aria-hidden="true" class="fas fa-arrow-up"></i>
@@ -2508,6 +2923,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <i aria-hidden="true" class="fas fa-times"></i>
 </button>
 <h2 class="netflix-modal-title" id="netflixModalTitle">Pilih Paket Netflix</h2>
+<p class="szael-modal-description">Netflix Premium dengan beberapa pilihan paket. Silakan pilih paket yang sesuai.</p>
 <p class="netflix-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="netflix-package-list">
 <div class="netflix-package">
@@ -2548,6 +2964,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="alightModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="alightModalTitle">Pilih Paket Alight Motion</h2>
+<p class="szael-modal-description">Alight Motion Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2573,6 +2990,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="capcutModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="capcutModalTitle">Pilih Paket Capcut</h2>
+<p class="szael-modal-description">CapCut Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2598,6 +3016,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="canvaModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="canvaModalTitle">Pilih Paket Canva</h2>
+<p class="szael-modal-description">Canva Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2623,6 +3042,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="youtubeModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="youtubeModalTitle">Pilih Paket YouTube</h2>
+<p class="szael-modal-description">YouTube Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2648,6 +3068,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="sportifyModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="sportifyModalTitle">Pilih Paket Sportify</h2>
+<p class="szael-modal-description">Spotify Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2673,6 +3094,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="winkModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="winkModalTitle">Pilih Paket Wink</h2>
+<p class="szael-modal-description">Wink Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2692,6 +3114,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="iqiyiModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="iqiyiModalTitle">Pilih Paket Iqiyi</h2>
+<p class="szael-modal-description">iQIYI Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2717,6 +3140,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="bstationModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="bstationModalTitle">Pilih Paket Bstation</h2>
+<p class="szael-modal-description">Bstation Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2754,6 +3178,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="reminiModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="reminiModalTitle">Pilih Paket Remini</h2>
+<p class="szael-modal-description">Remini Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2779,6 +3204,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="loklokModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="loklokModalTitle">Pilih Paket Remini</h2>
+<p class="szael-modal-description">Loklok Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -2804,6 +3230,7 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 <div aria-labelledby="chatgptModalTitle" aria-modal="true" class="app-package-modal-box" role="dialog">
 <button aria-label="Tutup" class="app-package-modal-close" type="button"><i class="fas fa-times"></i></button>
 <h2 class="app-package-modal-title" id="loklokModalTitle">Pilih Paket Chatgpt</h2>
+<p class="szael-modal-description">ChatGPT Premium tersedia dalam beberapa pilihan paket.</p>
 <p class="app-package-modal-subtitle">Pilih salah satu paket yang kamu inginkan</p>
 <div class="app-package-list">
 <div class="app-package-item">
@@ -3251,5 +3678,276 @@ if(themeToggleNav) themeToggleNav.addEventListener('click',()=>setTheme(!documen
 </script>
 <button aria-label="Buka keranjang" class="szael-cart-fab" id="szaelCartFab" type="button"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="szael-cart-count" id="szaelCartCount">0</span></button><div aria-hidden="true" class="szael-cart-modal" id="szaelCartModal"><div class="szael-cart-box" role="dialog" aria-modal="true" aria-labelledby="szaelCartTitle"><div class="szael-cart-head"><h2 id="szaelCartTitle">🛒 Keranjang</h2><button aria-label="Tutup keranjang" class="szael-cart-close" id="szaelCartClose" type="button"><i class="fas fa-times"></i></button></div><div id="szaelCartList"></div><div class="szael-cart-total"><span>Total</span><strong id="szaelCartTotal">Rp0</strong></div><button class="szael-cart-checkout" id="szaelCartCheckout" type="button" disabled><i class="fab fa-whatsapp"></i> Checkout Semua ke WhatsApp</button></div></div>
 <script id="szael-cart-js">(function(){const fab=document.getElementById('szaelCartFab'),modal=document.getElementById('szaelCartModal'),close=document.getElementById('szaelCartClose'),list=document.getElementById('szaelCartList'),count=document.getElementById('szaelCartCount'),totalEl=document.getElementById('szaelCartTotal'),checkout=document.getElementById('szaelCartCheckout');if(!fab||!modal||!list)return;let cart=[];function clean(v){return(v||'').replace(/\s+/g,' ').trim()}function priceNumber(v){const m=clean(v).replace(/\./g,'').match(/Rp\s*([0-9]+)/i);return m?parseInt(m[1],10):0}function rupiah(n){return'Rp'+Number(n||0).toLocaleString('id-ID')}function openCart(){modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.classList.add('netflix-modal-open');render()}function closeCart(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.classList.remove('netflix-modal-open')}function render(){const itemCount=cart.reduce((a,x)=>a+x.qty,0),total=cart.reduce((a,x)=>a+x.price*x.qty,0);count.textContent=itemCount;totalEl.textContent=total?rupiah(total):'Rp0';checkout.disabled=!cart.length;if(!cart.length){list.innerHTML='<div class="szael-cart-empty"><i class="fas fa-shopping-basket" style="font-size:2rem;margin-bottom:9px"></i><br>Keranjang masih kosong.<br><small>Pilih beberapa paket untuk checkout sekaligus.</small></div>';return}list.innerHTML=cart.map((x,i)=>'<div class="szael-cart-item"><div><strong>'+x.title+'</strong><small>'+x.duration+' • '+x.priceText+'</small></div><div class="szael-cart-controls"><button class="szael-cart-qty-btn" data-action="minus" data-index="'+i+'" type="button">−</button><span class="szael-cart-qty">'+x.qty+'</span><button class="szael-cart-qty-btn" data-action="plus" data-index="'+i+'" type="button">+</button><button class="szael-cart-remove" data-action="remove" data-index="'+i+'" type="button">Hapus</button></div></div>').join('')}function addItem(btn){const box=btn.closest('.app-package-item,.netflix-package');if(!box)return;const title=clean(box.querySelector('h4')?.textContent)||'Paket Premium',duration=clean(box.querySelector('.app-package-duration,.netflix-package-duration')?.textContent)||'',priceText=clean(box.querySelector('.app-package-price,.netflix-package-price')?.textContent)||'',price=priceNumber(priceText),key=title+'|'+duration+'|'+priceText,existing=cart.find(x=>x.key===key);if(existing)existing.qty++;else cart.push({key,title,duration,priceText,price,qty:1});render();if(typeof window.szaelToast==='function')window.szaelToast(title+' ditambahkan ke keranjang')}document.addEventListener('click',function(e){const add=e.target.closest('.szael-cart-add');if(add){e.preventDefault();addItem(add);return}const action=e.target.closest('[data-action]');if(action){const i=Number(action.dataset.index);if(!cart[i])return;if(action.dataset.action==='plus')cart[i].qty++;if(action.dataset.action==='minus'){cart[i].qty--;if(cart[i].qty<=0)cart.splice(i,1)}if(action.dataset.action==='remove')cart.splice(i,1);render()}});document.querySelectorAll('.app-package-buy,.netflix-package-buy').forEach(function(btn){if(btn.parentElement&&!btn.parentElement.querySelector('.szael-cart-add')){const add=document.createElement('button');add.type='button';add.className='szael-cart-add';add.innerHTML='<i class="fas fa-cart-plus"></i> Tambah ke Keranjang';btn.insertAdjacentElement('afterend',add)}});fab.addEventListener('click',openCart);close?.addEventListener('click',closeCart);modal.addEventListener('click',e=>{if(e.target===modal)closeCart()});checkout.addEventListener('click',function(){if(!cart.length)return;const now=new Date(),mins=now.getHours()*60+now.getMinutes();let number='',admin='';if(mins>=480&&mins<900){number='6281394034310';admin='Admin 1'}else if(mins>=900&&mins<1380){number='6287888870173';admin='Admin 2'}else{if(typeof window.szaelToast==='function')window.szaelToast('Admin sedang offline. Jam operasional 08.00 - 23.00 WIB.');return}const lines=cart.map((x,i)=>(i+1)+'. '+x.title+(x.duration?' — '+x.duration:'')+' — '+x.priceText+' × '+x.qty+' = '+rupiah(x.price*x.qty));const total=cart.reduce((a,x)=>a+x.price*x.qty,0);const msg='Halo Admin Szaell Market 👋\n\nSaya ingin melakukan checkout beberapa produk:\n\n'+lines.join('\n')+'\n\n🧾 Total Pesanan: '+rupiah(total)+'\n📦 Jumlah Item: '+cart.reduce((a,x)=>a+x.qty,0)+'\n\nMohon konfirmasi ketersediaan dan proses pesanan saya. Terima kasih 🙏';const url='https://wa.me/'+number+'?text='+encodeURIComponent(msg);if(typeof window.szaelToast==='function')window.szaelToast('Menghubungkan ke '+admin+'...');setTimeout(()=>window.open(url,'_blank','noopener'),180)});render()})();</script>
+
+<script id="szael-app-slider-fix-js">
+(function(){
+  function initSzaelAppSlider(){
+    const slider=document.getElementById('szaelAppSlider');
+    const prev=document.getElementById('szaelAppPrev');
+    const next=document.getElementById('szaelAppNext');
+    if(!slider || !prev || !next) return;
+
+    function getStep(){
+      const card=slider.querySelector('.menu-card');
+      if(!card) return Math.max(slider.clientWidth * 0.85, 280);
+      const gap=parseFloat(getComputedStyle(slider).gap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function updateButtons(){
+      const max=Math.max(0, slider.scrollWidth-slider.clientWidth);
+      prev.disabled=slider.scrollLeft <= 2;
+      next.disabled=slider.scrollLeft >= max-2;
+    }
+
+    prev.addEventListener('click',function(){
+      slider.scrollBy({left:-getStep(),behavior:'smooth'});
+    });
+
+    next.addEventListener('click',function(){
+      slider.scrollBy({left:getStep(),behavior:'smooth'});
+    });
+
+    slider.addEventListener('scroll',updateButtons,{passive:true});
+    window.addEventListener('resize',updateButtons);
+    setTimeout(updateButtons,100);
+    updateButtons();
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded',initSzaelAppSlider);
+  }else{
+    initSzaelAppSlider();
+  }
+})();
+</script>
+
+<!-- =========================================================
+     #14 - SKELETON LOADING
+     Tampilan skeleton singkat saat halaman pertama kali dibuka.
+     ========================================================= -->
+<style id="szael-skeleton-loading-css">
+.szael-skeleton-loader{
+  position:fixed;
+  inset:0;
+  z-index:100010;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+  opacity:1;
+  visibility:visible;
+  transition:opacity .3s ease,visibility .3s ease;
+}
+.szael-skeleton-loader.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.szael-skeleton-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+}
+.szael-skeleton-spinner{
+  width:52px;
+  height:52px;
+  border:5px solid #dbeafe;
+  border-top-color:#2563eb;
+  border-radius:50%;
+  animation:szaelSpinnerRotate .8s linear infinite;
+}
+.szael-skeleton-label{
+  color:#1e3a8a;
+  font:600 14px/1.4 Arial,sans-serif;
+}
+@keyframes szaelSpinnerRotate{
+  to{transform:rotate(360deg)}
+}
+body.dark-mode .szael-skeleton-loader{
+  background:rgba(17,24,39,.94);
+}
+body.dark-mode .szael-skeleton-spinner{
+  border-color:#374151;
+  border-top-color:#60a5fa;
+}
+body.dark-mode .szael-skeleton-label{
+  color:#e2e8f0;
+}
+@media(prefers-reduced-motion:reduce){
+  .szael-skeleton-spinner{animation-duration:2s}
+}
+</style>
+
+<script id="szael-skeleton-loading-js">
+(function(){
+  const loader=document.getElementById('szaelSkeletonLoader');
+  if(!loader) return;
+  let navigating=false;
+
+  function hideSkeleton(){
+    loader.classList.add('hide');
+    loader.setAttribute('aria-hidden','true');
+  }
+  function showSkeleton(){
+    loader.classList.remove('hide');
+    loader.setAttribute('aria-hidden','false');
+  }
+
+  // Tampilkan loader sebentar saat berpindah ke halaman lain di website.
+  document.addEventListener('click',function(event){
+    const link=event.target.closest('a[href]');
+    if(!link||navigating||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey) return;
+    if(link.target&&link.target!=='_self') return;
+    if(link.hasAttribute('download')) return;
+    let destination;
+    try{destination=new URL(link.href,window.location.href)}catch(error){return}
+    if(destination.origin!==window.location.origin) return;
+    if(destination.pathname===window.location.pathname&&destination.search===window.location.search) return;
+
+    event.preventDefault();
+    navigating=true;
+    showSkeleton();
+    window.setTimeout(function(){window.location.assign(destination.href)},220);
+  },true);
+
+  window.addEventListener('pageshow',function(event){
+    if(event.persisted){navigating=false;hideSkeleton()}
+  });
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){
+      setTimeout(hideSkeleton,650);
+    },{once:true});
+  }else{
+    setTimeout(hideSkeleton,650);
+  }
+})();
+</script>
+
+
+<style id="szael-preview-catalog-style">
+/* PREVIEW SAJA — tidak mengubah file utama */
+#paket .paket-slider-wrap{width:min(1180px,calc(100% - 28px));}
+#paket .paket-grid{gap:14px!important;padding:8px 2px 16px!important;}
+#paket .paket-grid .app-choice-card{
+  position:relative;
+  flex:0 0 calc((100% - 28px)/3)!important;
+  min-height:0!important;
+  height:auto!important;
+  padding:18px!important;
+  border:1px solid #e5e7eb!important;
+  border-radius:18px!important;
+  background:rgba(255,255,255,.96)!important;
+  box-shadow:0 6px 22px rgba(15,23,42,.06)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+  overflow:hidden;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+}
+#paket .paket-grid .app-choice-card:hover{
+  transform:translateY(-4px)!important;
+  box-shadow:0 14px 32px rgba(37,99,235,.12)!important;
+  border-color:#bfdbfe!important;
+}
+#paket .paket-grid .app-choice-card::after{
+  content:"";
+  position:absolute;left:0;top:0;width:100%;height:3px;
+  background:linear-gradient(90deg,#2563eb,#7c3aed);
+  opacity:.9;
+}
+#paket .app-choice-card .card-header{
+  display:grid!important;
+  grid-template-columns:58px 1fr!important;
+  grid-template-rows:auto auto!important;
+  column-gap:13px!important;
+  align-items:center!important;
+  text-align:left!important;
+  margin:0!important;
+}
+#paket .app-choice-card .card-header img{
+  grid-row:1 / span 2!important;
+  width:58px!important;height:58px!important;
+  object-fit:cover!important;
+  margin:0!important;
+  border-radius:14px!important;
+  box-shadow:0 4px 12px rgba(15,23,42,.10)!important;
+}
+#paket .app-choice-card .card-header h3{
+  margin:0!important;
+  font-size:1.02rem!important;
+  line-height:1.25!important;
+  color:#111827!important;
+  text-align:left!important;
+}
+#paket .app-choice-card .duration{
+  margin:4px 0 0!important;
+  font-size:.78rem!important;
+  color:#64748b!important;
+  text-align:left!important;
+}
+#paket .app-choice-card .szael-product-badge{
+  position:absolute!important;
+  top:14px!important;
+  right:14px!important;
+  font-size:.62rem!important;
+  padding:4px 7px!important;
+  border-radius:999px!important;
+  z-index:2;
+}
+#paket .app-choice-card .szael-product-badge + .szael-product-badge{right:14px!important;top:43px!important;}
+#paket .app-choice-card .price{
+  margin:17px 0 5px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  text-align:left!important;
+  gap:1px!important;
+}
+#paket .app-choice-card .szael-price-old{
+  font-size:.76rem!important;
+  color:#94a3b8!important;
+}
+#paket .app-choice-card .szael-price-new,
+#paket .app-choice-card .price:not(:has(.szael-price-new)){
+  color:#2563eb!important;
+  font-size:1.08rem!important;
+  font-weight:800!important;
+}
+#paket .app-choice-card .description{display:none!important;}
+#paket .app-choice-card .benefits{
+  display:none!important;
+}
+#paket .app-choice-card .btn-order{
+  width:100%!important;
+  margin:14px 0 0!important;
+  padding:10px 13px!important;
+  border-radius:11px!important;
+  font-size:.86rem!important;
+  background:#2563eb!important;
+  box-shadow:none!important;
+}
+#paket .app-choice-card .btn-order:hover{background:#1d4ed8!important;}
+body.dark-mode #paket .paket-grid .app-choice-card{
+  background:#1f2937!important;
+  border-color:#374151!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.18)!important;
+}
+body.dark-mode #paket .app-choice-card .card-header h3{color:#f9fafb!important;}
+body.dark-mode #paket .app-choice-card .duration{color:#9ca3af!important;}
+@media(max-width:700px){
+  #paket .paket-slider-wrap{width:calc(100% - 24px);}
+  #paket .paket-grid .app-choice-card{
+    flex-basis:100%!important;
+    padding:16px!important;
+  }
+}
+</style>
+
 </body>
 </html>
