@@ -217,8 +217,8 @@
       <div class="szael-maintenance-icon">
         <i aria-hidden="true" class="fas fa-tools"></i>
       </div>
-      <h2 id="szaelMaintenanceTitle">Maintenance</h2>
-      <p>Sementara untuk halaman nokos masih dalam tahap pengembangan, Mungkin akan tersedia di beberapa hari kedepan. Terima Kasih</p>
+      <h2 id="szaelMaintenanceTitle">Store Sedang Maintenance</h2>
+      <p>Sementara waktu pemesanan melalui website sedang ditutup. Silakan kembali beberapa saat lagi.</p>
     </div>
   </div>
   <header class="site-header">
@@ -407,7 +407,7 @@
   <script id="szael-maintenance-mode">
     (function(){
       /* Ubah false menjadi true untuk mengaktifkan maintenance di halaman Nokos. */
-      window.SZAEL_MAINTENANCE_MODE = true;
+      window.SZAEL_MAINTENANCE_MODE = false;
       const maintenance=document.getElementById('szaelMaintenance');
       if(window.SZAEL_MAINTENANCE_MODE&&maintenance){
         document.body.classList.add('szael-maintenance-active');
